@@ -56,7 +56,7 @@ body:
     id: coc
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct]()
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Anmol-Baranwal/WaitSmart/blob/main/CODE_OF_CONDUCT.md)
       options:
         - label: I follow [Contributing Guidelines](https://github.com/Anmol-Baranwal/Awesome-Illustrations-4Projects/blob/main/CONTRIBUTING.md) of this project.
           required: true
