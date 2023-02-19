@@ -1,0 +1,39 @@
+name: "✅ Current Work"
+description: Create a new ticket for a pending work
+title: "✅ [Work] - <title>"
+labels: [
+  "current work"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Please enter an explicit description of your issue
+      placeholder: Major details and complete description of your incident...
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Category"
+      description: This issue comes under which category ?
+      multiple: true
+      options:
+        - Front-end
+        - Back-end
+        - API Integration
+        - Database
+        - Documentation
+        - Algorithm 
+    validations:
+      required: false
+  - type: input
+    id: tech-stack
+    attributes:
+      label: "Tech Stack"
+      description: Please enter the technologies that will be used to complete this issue
+      placeholder: ex. `HTML`, `CSS`, `JavaScript`, `TypeScript`
+    validations:
+      required: true
+   
