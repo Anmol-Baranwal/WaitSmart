@@ -20,20 +20,21 @@ body:
       description: This issue comes under which category ?
       multiple: true
       options:
-        - Front-end
-        - Back-end
+        - Frontend
+        - Backend
         - API Integration
         - Database
         - Documentation
         - Algorithm 
+        - CI/CD
     validations:
       required: false
   - type: input
     id: tech-stack
     attributes:
-      label: "Tech Stack"
+      label: "Technologies Utilized"
       description: Please enter the technologies that will be used to complete this issue
-      placeholder: ex. `HTML`, `CSS`, `JavaScript`, `TypeScript`
+      placeholder: ex. `Next.js`, `CSS`,
     validations:
       required: true
    
