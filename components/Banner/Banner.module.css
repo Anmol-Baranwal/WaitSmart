@@ -1,0 +1,84 @@
+.contentWrapper {
+  display: block;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.contentWrapper > section {
+  max-width: 75%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contentWrapper > section h1 {
+  color: #566272;
+  font-family: "Crimson Text", Serif;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.26;
+}
+
+.contentWrapper > section p {
+  max-width: 450px;
+  font-size: 18px;
+  line-height: 2.33;
+  margin-top: 25px;
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.subscribe input {
+  margin-right: 15px;
+  min-height: 45px;
+}
+
+.subscribe button {
+  min-height: 45px;
+  font-size: 16px;
+}
+
+.sponsoredBy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.sponsoredBy span {
+  color: rgba(86, 98, 114, 0.6);
+  font-size: 16px;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+}
+
+.logos figure {
+  margin-left: 10px;
+}
+
+.logos img {
+  max-width: 69px;
+}
+
+.illustration {
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.illustration img {
+  max-width: 100%;
+}
