@@ -1,33 +1,38 @@
 import { Box, Heading, Text, Button, Flex, Image } from "@chakra-ui/react";
-// import Input from "components/input";
-import styles from "./banner.module.css";
+import styles from "./Banner.module.css";
+import CustomInput from "../Input/CustomInput";
+import CustomButton from "../Button/CustomButton";
 
 const Banner = () => {
   return (
-    <Box className={`${styles.section} ${styles.bannerSection}`} id="home">
+    <Box className={styles.section} id="home">
       <Box className={styles.container}>
         <Box className={styles.contentWrapper}>
           <Box className={styles.content}>
-            <Heading as="h1" className={`${styles.h1} ${styles.bannerHeading}`}>
+            <Heading as="h1" className={styles.bannerHeading}>
+              {/* `${styles.h1} ${styles.bannerHeading}` */}
               Build your audience &amp; grow your business online smarter
             </Heading>
-            <Text className={`${styles.p} ${styles.bannerText}`}>
+            <Text className={`${styles.p} ${styles.bannerSubHeading}`}>
               Get your blood tests delivered at let home collect sample from the
               victory of the managements that supplies best design system
               guidelines ever.
             </Text>
             <Box className={styles.subscribe}>
-              <label htmlFor="email" className={styles.srOnly}>
+              {/* <label htmlFor="email" className={styles.srOnly}>
                 Email
-              </label>
-              {/* <Input
+              </label> */}
+              <CustomInput
                 id="email"
                 type="email"
                 placeholder="Enter Email address"
-              /> */}
-              <Button className={styles.primaryButton} colorScheme="primary">
+              />
+              <CustomButton
+                className={styles.primaryButton}
+                colorScheme="primary"
+              >
                 Subscribe
-              </Button>
+              </CustomButton>
             </Box>
             <Box className={styles.sponsoredBy}>
               <Text className={styles.span}>Sponsored by:</Text>
