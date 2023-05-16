@@ -3,6 +3,7 @@ import styles from "@/styles/Home.module.css";
 import Banner from "@/components/Banner/Banner";
 import Services from "@/components/Services/Services";
 import Subscribe from "@/components/Subscribe/Subscribe";
+import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Banner />
         <Services />
         <Subscribe />
+        <Footer />
       </div>
     </>
   );
