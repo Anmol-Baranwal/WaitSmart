@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 import Banner from "@/components/Banner/Banner";
+import Services from "@/components/Services/Services";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <div className={styles.main}>
         <Banner />
+        <Services />
       </div>
     </>
   );
