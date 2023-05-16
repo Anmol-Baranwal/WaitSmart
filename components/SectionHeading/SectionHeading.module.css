@@ -1,0 +1,29 @@
+.heading {
+  text-align: center;
+  max-width: 660px;
+  margin: 0 auto 60px;
+}
+
+.title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.33;
+}
+
+.title span {
+  display: inline-block;
+}
+
+.emoji {
+  margin-left: 15px;
+  position: relative;
+  top: 8px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.86;
+  margin-top: 10px;
+  font-family: "Crimson Text", serif;
+}
