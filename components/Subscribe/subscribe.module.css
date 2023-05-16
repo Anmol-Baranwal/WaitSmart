@@ -1,0 +1,78 @@
+.subscribe {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #020718;
+  width: 100vw;
+}
+
+.subscribe h3 {
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscribe p {
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.6;
+  letter-spacing: -0.5px;
+  text-align: center;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+}
+
+.subscribe form {
+  width: 100%;
+  max-width: 555px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.subscribe input {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.08);
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  padding-left: 0;
+  height: 50px;
+  margin-right: 0;
+  text-align: center;
+}
+
+.subscribe input::placeholder {
+  letter-spacing: 0.1rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+}
+
+.subscribe button {
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  color: #020718;
+  letter-spacing: -0.2px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.subscribe button:hover {
+  background-color: #fff;
+  opacity: 0.8;
+}
