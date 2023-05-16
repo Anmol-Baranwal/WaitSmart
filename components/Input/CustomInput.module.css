@@ -4,10 +4,10 @@
 }
 
 .input::placeholder {
-  color: var(--bg-200);
-  font-weight: 400;
+  color: var(--text-secondary);
+  font-weight: 200;
   font-family: "Crimson Text", serif;
-  letter-spacing: 0.06rem;
+  /* letter-spacing: 0.06rem; */
   padding-left: 0.1rem;
 }
 
