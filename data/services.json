@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "icon": "individual",
+    "title": "For Individuals",
+    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+  },
+  {
+    "id": 2,
+    "icon": "team",
+    "title": "For Team",
+    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+  },
+  {
+    "id": 3,
+    "icon": "org",
+    "title": "For Organization",
+    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+  }
+]
