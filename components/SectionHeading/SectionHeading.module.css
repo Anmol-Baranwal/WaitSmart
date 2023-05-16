@@ -8,7 +8,7 @@
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 28px;
-  line-height: 1.33;
+  line-height: 1.5;
 }
 
 .title span {
@@ -22,8 +22,8 @@
 }
 
 .description {
-  font-size: 14px;
   line-height: 1.86;
   margin-top: 10px;
-  font-family: "Crimson Text", serif;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
 }

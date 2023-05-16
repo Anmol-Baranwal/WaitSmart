@@ -1,5 +1,5 @@
 import { Box, Image, Heading, Text } from "@chakra-ui/react";
-import styles from "./services.module.css";
+import styles from "./feature.module.css";
 import Link from "next/link";
 
 const Feature = ({ data, ...props }) => {
@@ -8,11 +8,15 @@ const Feature = ({ data, ...props }) => {
   return (
     <Box className={styles.feature} {...props}>
       <Box as="figure">
-        <Image src={iconPath} alt={data?.title} />
+        <Image src={iconPath} alt={data?.title} className={styles.icon} />
       </Box>
-      <Box>
-        <Heading as="h3">{data?.title}</Heading>
-        <Text as="p">{data?.description}</Text>
+      <Box className={styles.content}>
+        <Heading as="h3" className={styles.title}>
+          {data?.title}
+        </Heading>
+        <Text as="p" className={styles.para}>
+          {data?.description}
+        </Text>
         {data?.path && (
           <Link href={data?.path} className={styles.learnMore}>
             Learn More

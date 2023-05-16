@@ -6,7 +6,12 @@ import data from "@/data/services.json";
 
 const Services = () => {
   return (
-    <Box as="section" id="services" variant="section.features">
+    <Box
+      as="section"
+      id="services"
+      variant="section.features"
+      className={styles.services}
+    >
       <Container>
         <SectionHeading
           className={styles.heading}
