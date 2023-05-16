@@ -2,6 +2,7 @@ import { Box, Heading, Text, Button, Flex, Image } from "@chakra-ui/react";
 import styles from "./Banner.module.css";
 import CustomInput from "../Input/CustomInput";
 import CustomButton from "../Button/CustomButton";
+import { FaStar } from "react-icons/fa";
 
 const Banner = () => {
   return (
@@ -9,6 +10,16 @@ const Banner = () => {
       <Box className={styles.container}>
         <Box className={styles.contentWrapper}>
           <Box className={styles.content}>
+            <Box className={styles.stars}>
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <div className={styles.starText}>
+                Trused by over 4,332 hospitals
+              </div>
+            </Box>
             <Heading as="h1" className={styles.bannerHeading}>
               {/* `${styles.h1} ${styles.bannerHeading}` */}
               Build your audience &amp; grow your business online smarter
@@ -19,9 +30,6 @@ const Banner = () => {
               guidelines ever.
             </Text>
             <Box className={styles.subscribe}>
-              {/* <label htmlFor="email" className={styles.srOnly}>
-                Email
-              </label> */}
               <CustomInput
                 id="email"
                 type="email"
@@ -50,7 +58,7 @@ const Banner = () => {
             </Box>
           </Box>
           <Box as="figure" className={styles.illustration}>
-            <Image src="/static/banner/banner.png" alt="banner" />
+            <Image src="/static/banner/heroimage.jpg" alt="banner" />
           </Box>
         </Box>
       </Box>
