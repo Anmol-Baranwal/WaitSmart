@@ -6,7 +6,7 @@
   transition: ease-in-out 0.5s;
   border-radius: 0.5rem;
   position: relative;
-  /* background-color: blue; */
+  position: relative;
   margin: 0 2rem;
 }
 
@@ -59,6 +59,10 @@
   transition: 0.4s ease-in-out;
 }
 
+.card:hover .socialShare {
+  opacity: 1;
+}
+
 .socialShare {
   position: absolute;
   right: 9px;
@@ -73,9 +77,10 @@
   padding-top: 2px;
 }
 
-.card:hover .socialShare {
-  opacity: 1;
-  transition-delay: 0.3s;
+.socialShare .socialLink {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.3s ease;
 }
 
 .socialLink {
@@ -85,3 +90,22 @@
   margin: 0 10px;
   color: #ea3a60;
 }
+
+.card:hover .socialLink {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.card:hover .socialLink:nth-child(1) {
+  transition-duration: 0.28s;
+}
+
+.card:hover .socialLink:nth-child(2) {
+  transition-duration: 0.23s;
+}
+
+.card:hover .socialLink:nth-child(3) {
+  transition-duration: 0.2s;
+}
+/* ------------------------- */
