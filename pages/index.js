@@ -4,6 +4,8 @@ import Banner from "@/components/Banner/Banner";
 import Services from "@/components/Services/Services";
 import Subscribe from "@/components/Subscribe/Subscribe";
 import Footer from "@/components/Footer/Footer";
+import TechStack from "@/components/TechStack/TechStack";
+import Team from "@/components/Team/Team";
 
 export default function Home() {
   return (
@@ -17,6 +19,8 @@ export default function Home() {
       <div className={styles.main}>
         <Banner />
         <Services />
+        <TechStack />
+        <Team />
         <Subscribe />
         <Footer />
       </div>
