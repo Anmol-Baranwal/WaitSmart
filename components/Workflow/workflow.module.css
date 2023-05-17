@@ -1,0 +1,92 @@
+.workflow {
+  background-color: #ea3a60;
+  background-image: url("/static/workflow/patternBG.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 10rem;
+}
+
+.grid {
+  margin-bottom: -1rem;
+  padding-top: 0;
+  grid-gap: 50px 65px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+.card::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 90px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 215px;
+  height: 60px;
+}
+
+.card:nth-of-type(2n-1)::before {
+  background-image: url("/static/workflow/arrowOdd.svg");
+}
+
+.card:nth-of-type(2n)::before {
+  background-image: url("/static/workflow/arrowEven.svg");
+  top: 17px;
+}
+
+.card:last-child::before {
+  display: none;
+}
+
+.iconBox {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6rem;
+  margin-left: auto;
+  margin-right: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #234582;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -5px;
+}
+
+.wrapper .title {
+  font-size: 5rem;
+  color: white;
+  line-height: 1.55;
+  padding-right: 2rem;
+  margin-bottom: 3rem;
+}
+
+.wrapper .subTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2;
+  color: white;
+  opacity: 0.75;
+  padding-right: 5rem;
+}

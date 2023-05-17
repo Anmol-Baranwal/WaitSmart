@@ -6,6 +6,7 @@ import Subscribe from "@/components/Subscribe/Subscribe";
 import Footer from "@/components/Footer/Footer";
 import TechStack from "@/components/TechStack/TechStack";
 import Team from "@/components/Team/Team";
+import WorkFlow from "@/components/Workflow/workflow";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <TechStack />
         <Team />
+        <WorkFlow />
         <Subscribe />
         <Footer />
       </div>

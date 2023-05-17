@@ -3,7 +3,7 @@ import styles from "./card.module.css";
 import Link from "next/link";
 
 const Card = ({ src, altText, title, designation, social }) => {
-  console.log({ social });
+  // console.log({ social });
 
   return (
     <Box className={styles.card}>
