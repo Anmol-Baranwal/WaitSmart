@@ -1,0 +1,36 @@
+.team {
+  margin-bottom: 5rem;
+}
+
+/* .team p {
+  margin-top: -10rem;
+} */
+
+.grid {
+  margin-top: 0;
+  grid-gap: 35px 0px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (min-width: 40em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 52em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* .card:hover > .memberThumb {
+  border: 2px solid #ea3a60;
+  transition: 0.4s ease-in-out;
+} */
