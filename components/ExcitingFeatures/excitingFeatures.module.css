@@ -1,0 +1,46 @@
+.featureWrapper {
+  width: 100%;
+  padding: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .featureWrapper {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.illustration {
+  width: 35rem;
+}
+
+.illustrationWrapper:hover {
+  /* box-shadow: 0 4px 10px rgba(23, 51, 77, 0.16); */
+}
+
+@media screen and (min-width: 768px) {
+}
+
+.contentWrapper {
+  padding: 2rem 4rem 0 2rem;
+}
+
+.heading {
+  font-family: "DM Sans", sans-serif;
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-left: auto;
+}
+
+.heading h2 {
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.33;
+}
+
+.heading p {
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  padding-top: 0;
+}
