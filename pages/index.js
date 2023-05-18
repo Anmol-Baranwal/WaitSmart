@@ -9,6 +9,7 @@ import Team from "@/components/Team/Team";
 import WorkFlow from "@/components/Workflow/workflow";
 // import Testimonial from "@/components/Testimonial/Testimonial";
 import ExcitingFeatures from "@/components/ExcitingFeatures/ExcitingFeatures";
+import Faq from "@/components/Faq/Faq";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         {/* <Testimonial /> */}
         <ExcitingFeatures />
         <WorkFlow />
+        <Faq />
         <Subscribe />
         <Footer />
       </div>

@@ -1,0 +1,60 @@
+.flex {
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-bottom: 70px;
+}
+
+.content {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.content h3 {
+  font-size: 23px;
+  line-height: 1.5;
+  color: black;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  margin-top: -5px;
+  padding-right: 0;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.87;
+  color: #343d48;
+  opacity: 0.7;
+  margin-top: 10px;
+  padding-right: 0;
+}
+
+.askButton {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #02073e;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 6.5px 19px;
+  letter-spacing: -0.16px;
+  margin-top: 25px;
+  transition: all 500ms ease;
+}
+
+.askButton:hover {
+  opacity: 0.8;
+}
+
+.faqWrapper {
+  flex: 0 0 100%;
+}
+
+.faqSection {
+  /* Your additional styles for the section container */
+}
