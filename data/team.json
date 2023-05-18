@@ -4,7 +4,7 @@
     "imgSrc": "Member1",
     "altText": "Saimon Harmer",
     "title": "Saimon Harmer",
-    "designation": "CEO and Founder",
+    "designation": "Business Analyst",
     "socialProfile": [
       {
         "id": 1,
@@ -29,27 +29,45 @@
   {
     "id": 2,
     "imgSrc": "Member2",
-    "altText": "Aaron Nunez",
-    "title": "Aaron Nunez",
-    "designation": "Founder",
+    "altText": "Anmol Baranwal",
+    "title": "Aanmol Baranwal",
+    "designation": "Developer",
     "socialProfile": [
       {
         "id": 1,
-        "name": "facebook",
-        "path": "#",
-        "icon": "<FaFacebookF />"
+        "name": "producthunt",
+        "path": "https://www.producthunt.com/@anmol-baranwal",
+        "icon": "<FaProductHunt />"
       },
       {
         "id": 2,
-        "name": "twitter",
-        "path": "#",
-        "icon": "<FaTwitter />"
+        "name": "user",
+        "path": "http://anmolbaranwal.co/",
+        "icon": "<FaUserCircle />"
       },
       {
         "id": 3,
-        "name": "instagram",
-        "path": "#",
-        "icon": "<FaInstagram />"
+        "name": "dribbble",
+        "path": "https://dribbble.com/Anmol-Baranwal",
+        "icon": "<FaDribbble />"
+      },
+      {
+        "id": 4,
+        "name": "dev",
+        "path": "https://dev.to/anmolbaranwal",
+        "icon": "<FaDev />"
+      },
+      {
+        "id": 5,
+        "name": "github",
+        "path": "https://github.com/Anmol-Baranwal",
+        "icon": "<FaGithub />"
+      },
+      {
+        "id": 6,
+        "name": "linkedin",
+        "path": "https://www.linkedin.com/in/Anmol-Baranwal/",
+        "icon": "<FaLinkedin />"
       }
     ]
   },
