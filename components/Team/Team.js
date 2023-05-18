@@ -1,7 +1,17 @@
 import { Container, Grid } from "@chakra-ui/react";
-import SectionHeading from "../SectionHeading/SectionHeading";
+import SectionHeader from "../SectionHeading/SectionHeader";
 import Card from "../Card/Card";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaGithub,
+  FaLinkedin,
+  FaDev,
+  FaProductHunt,
+  FaDribbble,
+  FaUserCircle,
+} from "react-icons/fa";
 import data from "@/data/team.json";
 import styles from "./team.module.css";
 
@@ -10,14 +20,21 @@ const Team = () => {
     facebook: <FaFacebookF />,
     twitter: <FaTwitter />,
     instagram: <FaInstagram />,
+    github: <FaGithub />,
+    linkedin: <FaLinkedin />,
+    dev: <FaDev />,
+    producthunt: <FaProductHunt />,
+    dribbble: <FaDribbble />,
+    user: <FaUserCircle />,
   };
 
   return (
     <section className={styles.team}>
       <Container>
-        <SectionHeading
+        <SectionHeader
           title="The most qualified and talented individuals"
-          description="our team"
+          slogan="our creative team"
+          isWhite={false}
         />
 
         <Grid className={styles.grid}>
