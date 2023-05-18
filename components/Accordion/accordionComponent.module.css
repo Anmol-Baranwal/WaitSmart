@@ -1,0 +1,60 @@
+.accordionWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.accordionItem {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #f6f8fb;
+}
+
+.title {
+  padding: 12px 6px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding-left: 1.5rem;
+  display: inline-block;
+}
+
+.accordionButton {
+  transition: background-color 0.3s ease;
+}
+
+.accordionIcon {
+  margin-right: 1.3rem;
+  font-size: 1rem;
+}
+
+.accordionIcon.none {
+  display: none;
+}
+
+.accordionContent {
+  padding-left: 1.2rem;
+  padding-top: 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.1rem;
+  background-color: #fff;
+  /* transition: max-height 0.3s ease; */
+}
+
+.accordionItem.open {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+}
+
+.accordionItem.open .accordionWrapper {
+  background-color: #ebebeb;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+/* you can also use this without using another icon for the open position
+.accordionItem.open .accordionIcon {
+  transform: rotate(180deg);
+} */
