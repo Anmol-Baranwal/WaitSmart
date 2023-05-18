@@ -5,7 +5,7 @@ import Image from "next/image";
 const SectionHeading = ({ title, description, emoji, ...props }) => {
   return (
     <Box className={styles.heading} {...props}>
-      <Heading className={styles.title}>
+      <Heading className={styles.title} as="h2">
         {emoji && <span>{title}</span>}
         {emoji && <Image src={emoji} alt="emoji" className={styles.emoji} />}
         {!emoji && title}

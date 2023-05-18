@@ -7,6 +7,8 @@ import Footer from "@/components/Footer/Footer";
 import TechStack from "@/components/TechStack/TechStack";
 import Team from "@/components/Team/Team";
 import WorkFlow from "@/components/Workflow/workflow";
+// import Testimonial from "@/components/Testimonial/Testimonial";
+import ExcitingFeatures from "@/components/ExcitingFeatures/ExcitingFeatures";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
         <Services />
         <TechStack />
         <Team />
+        {/* <Testimonial /> */}
+        <ExcitingFeatures />
         <WorkFlow />
         <Subscribe />
         <Footer />
