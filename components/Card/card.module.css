@@ -6,7 +6,6 @@
   transition: ease-in-out 0.5s;
   border-radius: 0.5rem;
   position: relative;
-  position: relative;
   margin: 0 2rem;
 }
 
@@ -98,14 +97,32 @@
 }
 
 .card:hover .socialLink:nth-child(1) {
-  transition-duration: 0.28s;
+  transition-duration: 0.27s;
 }
 
 .card:hover .socialLink:nth-child(2) {
-  transition-duration: 0.23s;
+  transition-duration: 0.25s;
 }
 
 .card:hover .socialLink:nth-child(3) {
+  transition-duration: 0.24s;
+}
+
+.card:hover .socialLink:nth-child(4) {
+  transition-duration: 0.23s;
+}
+
+.card:hover .socialLink:nth-child(5) {
+  transition-duration: 0.21s;
+}
+
+.card:hover .socialLink:nth-child(6) {
   transition-duration: 0.2s;
 }
-/* ------------------------- */
+
+@media (max-width: 1120px) {
+  .card:nth-child(3) {
+    /* New code to center the third card */
+    /* margin-left: 10rem; */
+  }
+}
