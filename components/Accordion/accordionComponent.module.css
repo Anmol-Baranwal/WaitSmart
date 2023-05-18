@@ -1,21 +1,32 @@
 .accordionWrapper {
   margin-bottom: 1.5rem;
-}
-
-.accordionItem {
   outline: none;
   border: none;
   border-radius: 5px;
   background-color: #f6f8fb;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.5s ease-in-out,
+    max-height 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: 2000px; /* Set a default value larger than the expected height */
+}
+
+/* .accordionItem {
+  display: flex;
+} */
+
+.accordionWrapper:hover {
+  cursor: pointer;
 }
 
 .title {
-  padding: 12px 6px;
+  /* justify-content: left; */
+  padding: 16px 6px 12px;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 1.5rem;
   display: inline-block;
+  color: #38414c;
 }
 
 .accordionButton {
@@ -23,38 +34,41 @@
 }
 
 .accordionIcon {
-  margin-right: 1.3rem;
+  /* justify-content: right; */
   font-size: 1rem;
-}
-
-.accordionIcon.none {
-  display: none;
+  margin-left: 1rem;
 }
 
 .accordionContent {
-  padding-left: 1.2rem;
-  padding-top: 1rem;
+  padding-left: 1.65rem;
+  padding-top: 0.5rem;
   font-family: "DM Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
-  line-height: 1.5;
-  letter-spacing: 0.1rem;
-  background-color: #fff;
-  /* transition: max-height 0.3s ease; */
+  line-height: 2;
+  max-width: 75%;
+  letter-spacing: 1px;
+  background-color: transparent;
+  padding-bottom: 1.2rem;
 }
 
-.accordionItem.open {
+.accordionWrapper.open {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background-color: transparent;
-}
-
-.accordionItem.open .accordionWrapper {
-  background-color: #ebebeb;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  /* background-color: #ebebeb; */
+  box-shadow: 0px 9px 30px rgba(40, 48, 75, 0.08);
 }
 
 /* you can also use this without using another icon for the open position
 .accordionItem.open .accordionIcon {
   transform: rotate(180deg);
 } */
+
+@media (max-width: 800px) {
+  .accordionWrapper {
+    min-width: 25rem;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+}

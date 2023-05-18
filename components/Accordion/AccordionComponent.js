@@ -4,11 +4,11 @@ import { FaLongArrowAltRight } from "react-icons/fa";
 
 const AccordionItem = ({ title, contents, isOpen, onClick }) => {
   return (
-    <div className={styles.accordionWrapper}>
-      <div
-        className={`${styles.accordionItem} ${isOpen ? styles.open : ""}`}
-        onClick={onClick}
-      >
+    <div
+      className={`${styles.accordionWrapper} ${isOpen ? styles.open : ""}`}
+      onClick={onClick}
+    >
+      <div className={styles.accordionItem}>
         <h2 className={styles.title}>{title}</h2>
         {!isOpen ? (
           <FaLongArrowAltRight className={styles.accordionIcon} />
@@ -25,7 +25,13 @@ const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(0);
 
   const handleItemClick = (index) => {
-    setOpenIndex(index === openIndex ? -1 : index);
+    if (openIndex === index) {
+      // Avoid the closing of the only open option
+      return;
+    }
+
+    setOpenIndex(index);
+    //   setOpenIndex(index === openIndex ? -1 : index);
   };
 
   return (
