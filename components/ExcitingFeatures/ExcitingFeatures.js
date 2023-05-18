@@ -1,6 +1,6 @@
 import { Box, Container, Image } from "@chakra-ui/react";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
-import AccordionComponent from "../Accordion/AccordionComponent";
+import AccordionComponent from "./AccordionComponent";
 import styles from "./excitingFeatures.module.css";
 import data from "@/data/excitingFeatures.json";
 
