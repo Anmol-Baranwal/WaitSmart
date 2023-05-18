@@ -4,17 +4,21 @@
 }
 
 .white {
-  color: white;
+  color: #fff;
 }
 
 .subTitle {
   font-size: 1.2rem;
   font-weight: 500;
+  font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   margin-bottom: 0.5rem;
+  color: #ea3a60;
+  text-transform: capitalize;
 }
 
 .title {
+  font-family: "DM Sans", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;

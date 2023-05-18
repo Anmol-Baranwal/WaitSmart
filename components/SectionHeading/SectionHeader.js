@@ -17,7 +17,7 @@ export default function SectionHeader({ title, slogan, isWhite }) {
         as="p"
         className={subTitleClass}
         style={{
-          color: isWhite ? "white" : "primary",
+          // color: isWhite ? "white" : "primary",
           opacity: isWhite ? 0.7 : 1,
         }}
       >
@@ -26,7 +26,7 @@ export default function SectionHeader({ title, slogan, isWhite }) {
       <Heading
         as="h2"
         className={titleClass}
-        style={{ color: isWhite ? "white" : "heading" }}
+        // style={{ color: isWhite ? "white" : "heading" }}
       >
         {title}
       </Heading>
