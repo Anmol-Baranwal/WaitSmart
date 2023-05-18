@@ -13,9 +13,6 @@ const Subscribe = () => {
           By subscribing with your email, you accept our privacy policy
         </Text>
         <Box as="form" className={styles.form}>
-          <Box as="label" htmlFor="subscribeEmail" variant="styles.srOnly">
-            Email
-          </Box>
           <CustomInput
             placeholder="Enter your email address"
             type="email"
