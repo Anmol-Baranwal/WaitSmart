@@ -1,0 +1,27 @@
+.buttonGroupWrapper {
+  width: 100%;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -4px;
+}
+
+.button {
+  background-color: transparent;
+  border: 0px solid;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 2px;
+  color: #bbc7d7;
+  transition: all 0.25s;
+}
+
+.button:hover {
+  color: black;
+}
+
+.button:focus {
+  outline: 0;
+}
