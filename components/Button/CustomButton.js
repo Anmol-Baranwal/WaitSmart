@@ -22,6 +22,7 @@ const CustomButton = ({ ...props }) => {
           backgroundColor: "#02073E",
         },
       }}
+      as="button"
       {...props}
     />
   );
