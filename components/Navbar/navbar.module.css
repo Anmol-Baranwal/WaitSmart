@@ -1,9 +1,13 @@
+.navbar {
+  background-color: #f6f8fb;
+}
+
 .navbarContainer {
-  margin: 1rem 2rem;
+  margin: 1rem 0;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-width: 90vw;
+  min-width: 100vw;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-family: "Poppins", sans-serif;
@@ -20,9 +24,18 @@
   text-transform: uppercase;
 }
 
+.content {
+  display: flex;
+  align-items: center;
+  flex: 1; /* add flex property to fill the remaining space */
+}
+
 .menuLinks.open {
   display: inline-block;
+  align-items: center;
   margin-top: 0.3rem;
+  gap: 2rem;
+  margin: 0 auto;
 }
 
 .navItem {
@@ -32,13 +45,13 @@
 .menuLinks .navItem {
   color: #38414c;
   font-weight: 500;
-  padding-left: 2rem;
   font-weight: 500;
   font-size: 1.2rem;
+  padding-left: 2rem;
 }
 
 .menuLinks .navItem:first-child {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .navItem:hover {
@@ -49,6 +62,10 @@
 
 .buttonWrapper {
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 0.5rem;
   gap: 1.7rem; /* Add gap between buttons */
 }
 
@@ -57,18 +74,8 @@
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .menuLinks {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .logo {
-    margin-top: 1rem;
-  }
+.hamburgerWrapper {
+  display: none;
 }
 
 @media (max-width: 1250px) {
@@ -88,6 +95,7 @@
 
   .buttonWrapper {
     gap: 1.2rem;
+    margin-right: -2rem;
   }
 
   .buttonWrapper button {
@@ -97,14 +105,7 @@
   }
 }
 
-.open {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-@media (max-width: 940px) {
+@media (max-width: 980px) {
   .navbarContainer .content {
     display: none;
   }
@@ -120,12 +121,16 @@
     font-size: 2rem;
     color: #1f252c;
     margin-bottom: 5px;
-    margin-right: 1.5rem;
+    margin-right: -0.5rem;
   }
 
   .logo {
     margin-left: 2.5rem;
     z-index: 2;
+  }
+
+  .hamburgerWrapper {
+    display: block;
   }
 
   /* .logo{
@@ -134,7 +139,21 @@ when it is open
   } */
 }
 
-.drawer {
+@media (max-width: 768px) {
+  .menuLinks {
+    display: none;
+  }
+
+  .logo {
+    margin-top: 1rem;
+  }
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .drawerWrapper {
