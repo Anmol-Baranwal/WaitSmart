@@ -12,7 +12,7 @@ import CustomButton from "../Button/CustomButton";
 
 const TechStack = () => {
   return (
-    <Box as="section" className={styles.techStack}>
+    <Box as="section" className={styles.techStack} id="techStack">
       <Container>
         <Flex className={styles.flex}>
           <Box className={styles.content}>

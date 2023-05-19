@@ -21,11 +21,11 @@ export default function Footer() {
           </Text>
         </Box>
         <Box className={styles.linksWrap}>
-          <Link href="/">Home</Link>
-          <Link href="/">Why Us</Link>
-          <Link href="/">Services</Link>
+          <Link href="/#home">Home</Link>
+          <Link href="/#ExcitingFeatures">Features</Link>
+          <Link href="/#workflow">How this works</Link>
           <Link href="/">Testimonials</Link>
-          <Link href="/">FAQ</Link>
+          <Link href="/#FAQ">FAQ</Link>
         </Box>
       </Container>
     </Box>

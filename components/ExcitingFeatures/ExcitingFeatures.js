@@ -6,7 +6,7 @@ import data from "@/data/excitingFeatures.json";
 
 const ExcitingFeatures = () => {
   return (
-    <Box as="section" variant="section.excitingFeatures">
+    <Box as="section" variant="section.excitingFeatures" id="ExcitingFeatures">
       <Container>
         <Box className={styles.featureWrapper}>
           <Box className={styles.illustrationWrapper}>

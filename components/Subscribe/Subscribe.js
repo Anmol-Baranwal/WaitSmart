@@ -6,7 +6,7 @@ import CustomButton from "../Button/CustomButton";
 
 const Subscribe = () => {
   return (
-    <Box as="section" className={styles.subscribe}>
+    <Box as="section" className={styles.subscribe} id="subscribe">
       <Container>
         <Heading as="h3">Subscribe to get notified about events</Heading>
         <Text as="p">

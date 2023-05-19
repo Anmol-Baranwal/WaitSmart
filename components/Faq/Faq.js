@@ -7,7 +7,7 @@ import CustomButton from "../Button/CustomButton";
 
 const Faq = () => {
   return (
-    <Box as="section" className={styles.faqSection}>
+    <Box as="section" className={styles.faqSection} id="FAQ">
       <Container>
         <SectionHeading
           title="Frequently Ask Question"

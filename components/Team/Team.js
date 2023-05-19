@@ -29,7 +29,7 @@ const Team = () => {
   };
 
   return (
-    <section className={styles.team}>
+    <section className={styles.team} id="team">
       <Container>
         <SectionHeader
           title="The most qualified and talented individuals"

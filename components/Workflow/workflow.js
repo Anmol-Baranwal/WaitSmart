@@ -25,7 +25,7 @@ const WorkFlow = () => {
   // };
 
   return (
-    <section className={styles.workflow}>
+    <section className={styles.workflow} id="workflow">
       <Container>
         <SectionHeader
           slogan="Whats the function"

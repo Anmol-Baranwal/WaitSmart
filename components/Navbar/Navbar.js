@@ -22,13 +22,13 @@ const Navbar = () => {
 
   // Define the array of links to avoid repitition
   const navLinks = [
-    { name: "Features", path: "/" },
-    { name: "How this works?", path: "/" },
+    { name: "Features", path: "/#ExcitingFeatures" },
+    { name: "How this works?", path: "/#workflow" },
+    { name: "Our Team", path: "/#team" },
+    { name: "FAQ", path: "/#FAQ" },
     { name: "Testimonials", path: "/" },
-    { name: "Our Team", path: "/" },
-    { name: "FAQ", path: "/" },
-    { name: "Behind the Design", path: "/" },
-    { name: "Subscribe the Newsletter", path: "/" },
+    { name: "Behind the Design", path: "/#techStack" },
+    { name: "Subscribe the Newsletter", path: "/#subscribe" },
   ];
 
   return (
