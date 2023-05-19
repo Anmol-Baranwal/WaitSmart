@@ -1,59 +1,108 @@
 import { useState } from "react";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, useDisclosure } from "@chakra-ui/react";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import CustomButton from "../Button/CustomButton";
+import { FaHamburger, FaChevronRight } from "react-icons/fa";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+} from "@chakra-ui/react";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    onOpen();
   };
+
+  // Define the array of links to avoid repitition
+  const navLinks = [
+    { name: "Features", path: "/" },
+    { name: "How this works?", path: "/" },
+    { name: "Testimonials", path: "/" },
+    { name: "Our Team", path: "/" },
+    { name: "FAQ", path: "/" },
+    { name: "Behind the Design", path: "/" },
+    { name: "Subscribe the Newsletter", path: "/" },
+  ];
 
   return (
     <nav>
       <Container className={styles.navbar}>
-        <Box className={styles.navbarContainerLg}>
-          {/* ["navbar-container"] */}
+        <Box className={styles.navbarContainer}>
           <Link href="/" className={styles.logo}>
             Logo
           </Link>
-          <Box
-            className={`${styles.menuLinks} ${!isMenuOpen ? styles.open : ""}`}
+          <Box className={styles.content}>
+            <Box
+              className={`${styles.menuLinks} ${!isOpen ? styles.open : ""}`}
+            >
+              {navLinks.slice(0, 4).map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={styles.navItem}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </Box>
+            <Box className={styles.buttonWrapper}>
+              <CustomButton className={styles.btn} text="Login" path="#">
+                Login
+              </CustomButton>
+              <CustomButton className={styles.btn} text="Choose" path="#">
+                Appointment
+              </CustomButton>
+            </Box>
+          </Box>
+          <Box onClick={toggleMenu}>
+            <FaHamburger
+              className={`${styles.hamburger} ${styles.hamburgerIcon}`}
+            />
+          </Box>
+          <Drawer
+            placement="right"
+            onClose={onClose}
+            isOpen={isOpen}
+            className={styles.drawer}
           >
-            <Link href="/" className={styles.navItem}>
-              Features
-            </Link>
-            <Link href="/" className={styles.navItem}>
-              How this works?
-            </Link>
-            <Link href="/" className={styles.navItem}>
-              Testimonials
-            </Link>
-            <Link href="/" className={styles.navItem}>
-              Team
-            </Link>
-          </Box>
-          <Box className={styles.buttonWrapper}>
-            <CustomButton className={styles.btn} text="Login" path="#">
-              Login
-            </CustomButton>
-            <CustomButton className={styles.btn} text="Choose" path="#">
-              Appointment
-            </CustomButton>
-          </Box>
-        </Box>
-        <Box className={styles.navbarContainerSm}>
-          <Box
-            className={styles.hamburger}
-            onClick={toggleMenu}
-            display={{ md: "none" }}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </Box>
+            <DrawerOverlay />
+            <DrawerContent className={styles.drawerWrapper}>
+              <DrawerCloseButton className={styles.closeBtn} />
+              <Box className={styles.drawerContent}>
+                <DrawerHeader
+                  borderBottomWidth="1px"
+                  className={styles.drawerHeader}
+                >
+                  {/* Custom greetings */}
+                </DrawerHeader>
+                <DrawerBody className={styles.drawerBody}>
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.name}
+                      href={link.path}
+                      className={styles.navItem}
+                    >
+                      <FaChevronRight className={styles.iconSm} />{" "}
+                      <span className={styles.link}>{link.name}</span>
+                    </Link>
+                  ))}
+                  <CustomButton className={styles.btn} text="Login" path="#">
+                    Login
+                  </CustomButton>
+                  <CustomButton className={styles.btn} text="Choose" path="#">
+                    Appointment
+                  </CustomButton>
+                </DrawerBody>
+              </Box>
+            </DrawerContent>
+          </Drawer>
         </Box>
       </Container>
     </nav>
@@ -61,6 +110,40 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+{
+  /* <Link href="/" className={styles.navItem}>
+  <FaChevronRight className={styles.iconSm} />{" "}
+  <span className={styles.link}> Features </span>
+</Link>
+<Link href="/" className={styles.navItem}>
+  <FaChevronRight className={styles.iconSm} />{" "}
+  <span className={styles.link}> How this works? </span>
+</Link>
+<Link href="/" className={styles.navItem}>
+  <FaChevronRight className={styles.iconSm} />{" "}
+  <span className={styles.link}> Testimonials </span>
+</Link>
+<Link href="/" className={styles.navItem}>
+  <FaChevronRight className={styles.iconSm} />{" "}
+  <span className={styles.link}> Team </span>
+</Link> */
+}
+
+{
+  /* <Link href="/" className={styles.navItem}>
+  Features
+</Link>
+<Link href="/" className={styles.navItem}>
+  How this works?
+</Link>
+<Link href="/" className={styles.navItem}>
+  Testimonials
+</Link>
+<Link href="/" className={styles.navItem}>
+  Team
+</Link> */
+}
 
 // import {
 //   Box,
