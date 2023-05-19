@@ -47,6 +47,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.path}
                   className={styles.navItem}
+                  scroll={false}
                 >
                   {link.name}
                 </Link>
