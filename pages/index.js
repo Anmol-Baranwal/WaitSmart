@@ -10,6 +10,7 @@ import WorkFlow from "@/components/Workflow/workflow";
 // import Testimonial from "@/components/Testimonial/Testimonial";
 import ExcitingFeatures from "@/components/ExcitingFeatures/ExcitingFeatures";
 import Faq from "@/components/Faq/Faq";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function Home() {
   return (
@@ -21,16 +22,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
+        <Navbar />
         <Banner />
         <Services />
+        <ExcitingFeatures />
         <TechStack />
         <Team />
-        {/* <Testimonial /> */}
-        <ExcitingFeatures />
         <WorkFlow />
         <Faq />
         <Subscribe />
         <Footer />
+        {/* <Testimonial /> */}
       </div>
     </>
   );

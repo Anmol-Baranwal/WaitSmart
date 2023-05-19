@@ -32,8 +32,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav>
-      <Container className={styles.navbar}>
+    <nav className={styles.navbar}>
+      <Container>
         <Box className={styles.navbarContainer}>
           <Link href="/" className={styles.logo}>
             Logo
@@ -61,7 +61,7 @@ const Navbar = () => {
               </CustomButton>
             </Box>
           </Box>
-          <Box onClick={toggleMenu}>
+          <Box onClick={toggleMenu} className={styles.hamburgerWrapper}>
             <FaHamburger
               className={`${styles.hamburger} ${styles.hamburgerIcon}`}
             />

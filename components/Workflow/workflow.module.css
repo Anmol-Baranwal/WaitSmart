@@ -104,7 +104,8 @@
     padding-top: 0;
     grid-gap: 50px 50px;
     grid-template-columns: repeat(2, 1fr);
-    margin: 4rem;
+    margin-top: 4rem;
+    margin-bottom: -2rem;
   }
 
   .wrapper .title {
@@ -125,6 +126,7 @@
 @media (max-width: 650px) {
   .grid {
     grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 2rem;
   }
 
   .card {
