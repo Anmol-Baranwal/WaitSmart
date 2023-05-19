@@ -1,0 +1,122 @@
+.navbarContainerLg {
+  margin: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 90vw;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  justify-content: flex-start;
+  font-size: 2rem;
+  color: #38414c;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-size: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.menuLinks.open {
+  display: inline-block;
+  margin-top: 0.3rem;
+}
+
+.menuLinks .navItem {
+  color: #38414c;
+  text-decoration: none;
+  font-weight: 500;
+  padding-left: 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.menuLinks .navItem:first-child {
+  padding-left: 0;
+}
+
+.navItem:hover {
+  color: #ea3a60;
+  letter-spacing: 0.04rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttonWrapper {
+  display: flex;
+  gap: 1.7rem; /* Add gap between buttons */
+}
+
+.btn {
+  letter-spacing: 0.08rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .menuLinks {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 1250px) {
+  .navbarContainerLg {
+    min-width: 95vw;
+    margin-right: 2.5rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .menuLinks .navItem {
+    font-size: 1rem;
+    padding-left: 1.3rem;
+  }
+
+  .buttonWrapper {
+    gap: 1.2rem;
+  }
+
+  .buttonWrapper button {
+    font-size: 0.7rem;
+    /* font-weight: 500; */
+    padding: 0.7rem 2.1rem;
+  }
+}
+
+.navbarContainerSm {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+@media (max-width: 940px) {
+  .navbarContainerLg .menuLinks,
+  .navbarContainerLg .buttonWrapper {
+    display: none;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #38414c;
+    margin-bottom: 5px;
+  }
+}
