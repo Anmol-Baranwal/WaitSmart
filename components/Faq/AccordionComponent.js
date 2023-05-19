@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./accordionComponent.module.css";
-import { FaChevronUp, FaChevronDown } from "react-icons/fa";
+import { FaChevronUp } from "react-icons/fa";
 
 const AccordionItem = ({ title, contents, isOpen, onClick }) => {
   return (
@@ -10,11 +10,7 @@ const AccordionItem = ({ title, contents, isOpen, onClick }) => {
     >
       <div className={styles.accordionItem}>
         <h2 className={styles.title}>{title}</h2>
-        {isOpen ? (
-          <FaChevronUp className={styles.accordionIcon} />
-        ) : (
-          <FaChevronDown className={styles.accordionIcon} />
-        )}
+        <FaChevronUp className={styles.accordionIcon} />
       </div>
       {isOpen && <div className={styles.accordionContent}>{contents}</div>}
     </div>
@@ -31,7 +27,6 @@ const Accordion = ({ data }) => {
     }
 
     setOpenIndex(index);
-    //   setOpenIndex(index === openIndex ? -1 : index);
   };
 
   return (
@@ -50,6 +45,13 @@ const Accordion = ({ data }) => {
 };
 
 export default Accordion;
+
+// Using react icons to change the icon during state of open
+// {isOpen ? (
+//   <FaChevronUp className={styles.accordionIcon} />
+// ) : (
+//   <FaChevronDown className={styles.accordionIcon} />
+// )}
 
 // ------------- Using Chakra-UI -------------
 // import styles from "./accordionComponent.module.css";
