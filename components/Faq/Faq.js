@@ -3,6 +3,7 @@ import AccordionComponent from "./AccordionComponent";
 import faqData from "@/data/faq.json";
 import styles from "./faq.module.css";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import CustomButton from "../Button/CustomButton";
 
 const Faq = () => {
   return (
@@ -11,17 +12,10 @@ const Faq = () => {
         <SectionHeading
           title="Frequently Ask Question"
           description="Ask your question and meet"
+          className={styles.heading}
         />
-        <Flex sx={styles.flex}>
-          <Box sx={styles.faqWrapper}>
-            <AccordionComponent data={faqData} />
-          </Box>
-          <Box sx={styles.content}>
-            {/* <SectionHeading
-              title="Do you have any quesiton? Please ask here we ready to support"
-              description="If your question is not list here, please feel free to make a
-              manual support."
-            /> */}
+        <Flex className={styles.flex}>
+          <Box className={styles.content}>
             <Heading as="h3">
               Do you have any quesiton? Please ask here we ready to support
             </Heading>
@@ -29,9 +23,12 @@ const Faq = () => {
               If your question is not list here, please feel free to make a
               manual support.
             </Text>
-            <Link className={styles.askButton} path="#">
+            <CustomButton className={styles.askButton} path="#">
               Ask your Question
-            </Link>
+            </CustomButton>
+          </Box>
+          <Box className={styles.faqWrapper}>
+            <AccordionComponent data={faqData} />
           </Box>
         </Flex>
       </Container>
