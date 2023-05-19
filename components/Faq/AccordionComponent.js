@@ -33,7 +33,7 @@ const Accordion = ({ data }) => {
     <div>
       {data.map((item, index) => (
         <AccordionItem
-          key={item.id}
+          key={index}
           title={item.title}
           contents={item.contents}
           isOpen={index === openIndex}

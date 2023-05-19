@@ -12,7 +12,6 @@ const CustomInput = ({ placeholder, ...props }) => {
       height="auto"
       minHeight="60px"
       width="auto"
-      placeholderTextColor="rgba(2, 7, 62, 0.4)"
       _focus={{
         borderColor: "#db4a87",
       }}
