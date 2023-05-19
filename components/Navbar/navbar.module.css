@@ -1,4 +1,4 @@
-.navbarContainerLg {
+.navbarContainer {
   margin: 1rem 2rem;
   display: flex;
   align-items: center;
@@ -25,9 +25,12 @@
   margin-top: 0.3rem;
 }
 
+.navItem {
+  text-decoration: none;
+}
+
 .menuLinks .navItem {
   color: #38414c;
-  text-decoration: none;
   font-weight: 500;
   padding-left: 2rem;
   font-weight: 500;
@@ -40,7 +43,7 @@
 
 .navItem:hover {
   color: #ea3a60;
-  letter-spacing: 0.04rem;
+  letter-spacing: 0.02rem;
   transition: all 0.3s ease-in-out;
 }
 
@@ -62,10 +65,14 @@
   .hamburger {
     display: block;
   }
+
+  .logo {
+    margin-top: 1rem;
+  }
 }
 
 @media (max-width: 1250px) {
-  .navbarContainerLg {
+  .navbarContainer {
     min-width: 95vw;
     margin-right: 2.5rem;
   }
@@ -90,15 +97,6 @@
   }
 }
 
-.navbarContainerSm {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
-
 .open {
   display: flex;
   flex-direction: column;
@@ -107,16 +105,115 @@
 }
 
 @media (max-width: 940px) {
-  .navbarContainerLg .menuLinks,
-  .navbarContainerLg .buttonWrapper {
+  .navbarContainer .content {
     display: none;
   }
 
-  .hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #38414c;
-    margin-bottom: 5px;
+  .navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
+
+  .hamburger {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #1f252c;
+    margin-bottom: 5px;
+    margin-right: 1.5rem;
+  }
+
+  .logo {
+    margin-left: 2.5rem;
+    z-index: 2;
+  }
+
+  /* .logo{
+    color: #fff;
+when it is open
+  } */
+}
+
+.drawer {
+}
+
+.drawerWrapper {
+  /* margin-top: 2rem; */
+  min-height: 100vh;
+  background-color: #f6f8fb;
+  font-family: "DM Sans", sans-serif;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+.closeBtn {
+  position: relative;
+  top: 10px;
+  padding: 2px;
+  max-width: 2rem;
+  padding: 1rem 1.5rem;
+  margin: 0rem 2.5rem 0 auto;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  border: none;
+  outline: none;
+  background-color: #38414c;
+  color: #fff;
+  transition: transform 0.2s ease-in-out;
+}
+
+.closeBtn:hover {
+  transform: scale(1.1);
+  background-color: #1f252c;
+}
+
+.drawerContent {
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  padding-top: 0.5rem;
+}
+
+.drawerHeader {
+  padding-top: 2rem;
+}
+
+.drawerBody .btn {
+  margin-top: 2rem;
+  background-color: #02073e;
+}
+
+.drawerBody .btn.btn:first-of-type {
+  margin-right: 2rem;
+  margin-left: 1rem;
+}
+
+.drawerBody .btn:hover {
+  background-color: #ea3a60;
+}
+
+.iconSm {
+  font-size: 0.9rem;
+  margin-right: 0.3rem;
+}
+
+.drawerBody .navItem {
+  display: block;
+  color: black;
+  padding-top: 1rem;
+  padding-left: 0rem;
+}
+
+.drawerBody .navItem:hover {
+  letter-spacing: 0;
+  color: #ea3a60;
+}
+
+.navItem:hover > .iconSm {
+  transform: translateX(3px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.drawerBody .navItem:focus,
+.drawerBody .navItem:active {
+  color: #ea3a60;
 }
