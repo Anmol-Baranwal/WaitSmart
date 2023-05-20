@@ -2,27 +2,27 @@
   {
     "id": 1,
     "imgSrc": "Member1",
-    "altText": "Saimon Harmer",
-    "title": "Saimon Harmer",
-    "designation": "Business Analyst",
+    "altText": "Jai Garg",
+    "title": "Jai Garg",
+    "designation": "",
     "socialProfile": [
       {
         "id": 1,
-        "name": "facebook",
-        "path": "#",
-        "icon": "<FaFacebookF />"
+        "name": "linkedin",
+        "path": "https://www.linkedin.com/in/jai-garg-795173218/",
+        "icon": "<FaLinkedin />"
       },
       {
         "id": 2,
-        "name": "twitter",
-        "path": "#",
-        "icon": "<FaTwitter />"
+        "name": "github",
+        "path": "https://github.com/jaigarg7838",
+        "icon": "<FaGithub />"
       },
       {
         "id": 3,
-        "name": "instagram",
-        "path": "#",
-        "icon": "<FaInstagram />"
+        "name": "mail",
+        "path": "mailto:jaigarg7838@gmail.com",
+        "icon": "<IoMdMail />"
       }
     ]
   },
@@ -35,66 +35,72 @@
     "socialProfile": [
       {
         "id": 1,
-        "name": "producthunt",
-        "path": "https://www.producthunt.com/@anmol-baranwal",
-        "icon": "<FaProductHunt />"
+        "name": "linkedin",
+        "path": "https://www.linkedin.com/in/Anmol-Baranwal/",
+        "icon": "<FaLinkedin />"
       },
       {
         "id": 2,
-        "name": "user",
-        "path": "http://anmolbaranwal.co/",
-        "icon": "<FaUserCircle />"
-      },
-      {
-        "id": 3,
-        "name": "dribbble",
-        "path": "https://dribbble.com/Anmol-Baranwal",
-        "icon": "<FaDribbble />"
-      },
-      {
-        "id": 4,
-        "name": "dev",
-        "path": "https://dev.to/anmolbaranwal",
-        "icon": "<FaDev />"
-      },
-      {
-        "id": 5,
         "name": "github",
         "path": "https://github.com/Anmol-Baranwal",
         "icon": "<FaGithub />"
       },
       {
+        "id": 3,
+        "name": "dev",
+        "path": "https://dev.to/anmolbaranwal",
+        "icon": "<FaDev />"
+      },
+      {
+        "id": 4,
+        "name": "dribbble",
+        "path": "https://dribbble.com/Anmol-Baranwal",
+        "icon": "<FaDribbble />"
+      },
+      {
+        "id": 5,
+        "name": "user",
+        "path": "http://anmolbaranwal.co/",
+        "icon": "<FaUserCircle />"
+      },
+      {
         "id": 6,
-        "name": "linkedin",
-        "path": "https://www.linkedin.com/in/Anmol-Baranwal/",
-        "icon": "<FaLinkedin />"
+        "name": "mail",
+        "path": "mailto:anmolbaranwal119@gmail.com",
+        "icon": "<IoMdMail />"
+      },
+      {
+        "id": 7,
+        "name": "producthunt",
+        "path": "https://www.producthunt.com/@anmol-baranwal",
+        "icon": "<FaProductHunt />"
       }
     ]
   },
   {
     "id": 3,
     "imgSrc": "Member3",
-    "altText": "Aaron Nunez",
-    "title": "Aaron Nunez",
-    "designation": "Web Designer",
+    "altText": "Aman Garg",
+    "title": "Aman Garg",
+    "designation": "",
     "socialProfile": [
       {
         "id": 1,
-        "name": "facebook",
-        "path": "#",
+        "name": "linkedin",
+        "path": "https://www.linkedin.com/in/aman-garg-80928622a/",
         "icon": "<FaFacebookF />"
       },
       {
         "id": 2,
-        "name": "twitter",
-        "path": "#",
+        "name": "github",
+        "path": "https://github.com/AmanGarg2002",
         "icon": "<FaTwitter />"
       },
       {
         "id": 3,
-        "name": "instagram",
-        "path": "#",
-        "icon": "<FaInstagram />"
+        "name": "mail",
+        "path": "mailto:aman55garg@gmail.com",
+        "icon": "<IoMdMail />"
       }
     ]
   }
