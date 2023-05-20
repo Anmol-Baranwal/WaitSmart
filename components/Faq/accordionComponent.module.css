@@ -1,0 +1,80 @@
+.accordionWrapper {
+  margin-bottom: 1.5rem;
+  outline: none;
+  border: 0.1px solid var(--border-accordion);
+  border-radius: 5px;
+  background-color: var(--bg-light);
+  transition: background-color 0.3s ease-in-out, box-shadow 0.5s ease-in-out,
+    max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  max-height: 2000px;
+  padding-bottom: 0; /* for transition effect */
+}
+
+.accordionWrapper.open {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: transparent;
+  box-shadow: 0px 9px 30px rgba(40, 48, 75, 0.08);
+  padding-bottom: 1rem; /* for transition effect */
+  padding-top: 0.5rem;
+}
+
+.accordionWrapper:hover {
+  cursor: pointer;
+}
+
+.title {
+  padding: 16px 6px 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  padding-left: 1.5rem;
+  display: inline-block;
+  color: var(--text-primary);
+}
+
+.accordionButton {
+  transition: background-color 0.3s ease;
+}
+
+.accordionIcon {
+  font-size: 1rem;
+  margin-left: 1rem; /* Handle the width of icon, if u want it on R.H.S of parent container */
+  padding-top: 0.2rem;
+  transition: transform 0.3s ease-in;
+}
+
+.accordionWrapper.open .accordionIcon {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  padding-left: 1.65rem;
+  padding-top: 0.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 2;
+  max-width: 95%;
+  letter-spacing: 1px;
+  background-color: transparent;
+  padding-bottom: 1.2rem;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 0.9rem;
+  }
+
+  .accordionContent {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 578px) {
+  .accordionIcon {
+    margin-left: 0.2rem;
+  }
+}

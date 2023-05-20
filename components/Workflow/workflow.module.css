@@ -1,0 +1,153 @@
+.workflow {
+  background-color: var(--primary-200);
+  background-image: url("/static/workflow/patternBG.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+
+.grid {
+  margin-bottom: -1rem;
+  padding-top: 0;
+  grid-gap: 50px 65px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+}
+
+@media (min-width: 1220px) {
+  .card::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 90px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 215px;
+    height: 60px;
+  }
+
+  .card:nth-of-type(2n-1)::before {
+    background-image: url("/static/workflow/arrowOdd.svg");
+  }
+
+  .card:nth-of-type(2n)::before {
+    background-image: url("/static/workflow/arrowEven.svg");
+    top: 17px;
+  }
+
+  .card:last-child::before {
+    display: none;
+  }
+}
+
+.iconBox {
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-right: 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--bg-dark);
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.wrapper .title {
+  font-weight: 500;
+  font-size: 2rem;
+  color: white;
+  padding-right: 2rem;
+  line-height: 1.3;
+}
+
+.wrapper .subTitle {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: white;
+  opacity: 0.75;
+  padding-right: 5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1020px) {
+  .grid {
+    margin-bottom: -1rem;
+    padding-top: 0;
+    grid-gap: 50px 50px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 4rem;
+    margin-bottom: -2rem;
+  }
+
+  .wrapper .title {
+    margin-top: 0.3rem;
+    font-size: 1.5rem;
+  }
+
+  .wrapper .subTitle {
+    margin-bottom: 2rem;
+    font-size: 0.85rem;
+  }
+
+  .iconBox {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card:last-child {
+    margin-bottom: -5rem;
+  }
+
+  .card:first-child {
+    margin-top: -2rem;
+  }
+
+  .wrapper .subTitle {
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+
+  .iconBox {
+    margin-top: 1rem;
+  }
+}

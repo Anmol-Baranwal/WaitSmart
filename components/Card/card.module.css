@@ -1,0 +1,128 @@
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 5rem 1rem;
+  transition: ease-in-out 0.5s;
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 0 2rem;
+}
+
+.card:hover {
+  box-shadow: 0 4px 10px rgba(23, 51, 77, 0.16);
+}
+
+.memberThumb {
+  width: 9.5rem;
+  height: 9.5rem;
+  flex-shrink: 0;
+  border-color: var(--primary-200);
+  border: 2px solid var(--text-primary);
+  border-radius: 50%;
+}
+
+.infoWrapper {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.7rem;
+  font-family: "DM Sans", sans-serif;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 0.2rem;
+}
+
+.designation {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+.card:hover {
+  color: var(--primary-200);
+  transition: 0.4s ease-in-out;
+}
+
+.card:hover > .memberThumb {
+  border: 2px solid var(--primary-200);
+  transition: 0.4s ease-in-out;
+}
+
+.card:hover .designation {
+  color: var(--primary-200);
+  transition: 0.4s ease-in-out;
+}
+
+.card:hover .socialShare {
+  opacity: 1;
+}
+
+.socialShare {
+  position: absolute;
+  right: 9px;
+  bottom: 18px;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s;
+  opacity: 0;
+  padding-top: 2px;
+}
+
+.socialShare .socialLink {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.3s ease;
+}
+
+.socialLink {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  transition: all 0.25s;
+  margin: 0 10px;
+  color: var(--primary-200);
+}
+
+.card:hover .socialLink {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+.card:hover .socialLink:nth-child(1) {
+  transition-duration: 0.27s;
+}
+
+.card:hover .socialLink:nth-child(2) {
+  transition-duration: 0.25s;
+}
+
+.card:hover .socialLink:nth-child(3) {
+  transition-duration: 0.24s;
+}
+
+.card:hover .socialLink:nth-child(4) {
+  transition-duration: 0.23s;
+}
+
+.card:hover .socialLink:nth-child(5) {
+  transition-duration: 0.21s;
+}
+
+.card:hover .socialLink:nth-child(6) {
+  transition-duration: 0.2s;
+}
+
+@media (max-width: 1120px) {
+  .card:nth-child(3) {
+    /* New code to center the third card */
+    /* margin-left: 10rem; */
+  }
+}

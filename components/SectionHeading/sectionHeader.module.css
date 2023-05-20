@@ -1,0 +1,25 @@
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.white {
+  color: var(--color-white);
+}
+
+.subTitle {
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  color: var(--primary-200);
+  text-transform: capitalize;
+}
+
+.title {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+}

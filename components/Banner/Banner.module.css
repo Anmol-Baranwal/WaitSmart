@@ -1,0 +1,304 @@
+/* .bannerHeading {
+  font-family: "Crimson Text", serif;
+  letter-spacing: -0.025em;
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.bannerSubHeading {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+} */
+
+.container {
+  margin: 5rem 0 3.5rem;
+}
+
+@media (min-width: 340px) {
+  .container {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-left: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-left: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    margin-left: 4rem;
+  }
+}
+
+.contentWrapper {
+  display: block;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+  .contentWrapper {
+    display: grid;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contentWrapper {
+    min-height: 70vh;
+  }
+}
+
+@media (min-width: 1280px) {
+  .contentWrapper {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
+.content {
+  max-width: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (min-width: 1280px) {
+  .content {
+    max-width: 75%;
+    text-align: left;
+  }
+}
+
+.content h1 {
+  color: var(--text-black);
+  font-family: "Crimson Text", Serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    font-size: 34px;
+    line-height: 1.26;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content h1 {
+    font-size: 34px;
+    line-height: 1.11;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content h1 {
+    font-size: 44px;
+    line-height: 1.4;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content h1 {
+    font-size: 40px;
+    line-height: 1.11;
+  }
+}
+
+@media (min-width: 1680px) {
+  .content h1 {
+    font-size: 49px;
+    line-height: 1.26;
+  }
+}
+
+@media (min-width: 1920px) {
+  .content h1 {
+    font-size: 62px;
+    line-height: 1.26;
+  }
+}
+
+.content p {
+  max-width: 450px;
+  font-size: 14px;
+  line-height: 1.5;
+  padding-top: 1.5rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .content p {
+    font-size: 18px;
+    line-height: 1.87;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content p {
+    max-width: none;
+    font-size: 17px;
+    line-height: 2.33;
+  }
+}
+
+@media (min-width: 1280px) {
+  .content p {
+    max-width: 450px;
+    font-size: 16px;
+    line-height: 2.33;
+    margin-top: 4px;
+  }
+}
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.subscribe input {
+  margin-right: 15px;
+  min-height: 45px;
+}
+
+.subscribe button {
+  min-height: 45px;
+  font-size: 14px;
+}
+
+.sponsoredBy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  min-width: 29rem;
+}
+
+.sponsoredBy .span {
+  color: rgba(86, 98, 114, 0.6);
+  font-size: 14px;
+  padding-bottom: 2rem;
+  font-family: "DM Sans", sans-serif;
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+}
+
+.logos figure {
+  margin-left: 20px;
+}
+
+.logos img {
+  max-width: 69px;
+}
+
+@media (min-width: 768px) {
+  .logos img {
+    max-width: 85px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logos img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .logos img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .logos img {
+    max-width: 79px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .logos img {
+    max-width: 100px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .logos img {
+    max-width: 100%;
+  }
+}
+
+.illustration {
+  margin-left: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.illustration img {
+  max-width: 75%;
+}
+
+@media (min-width: 1024px) {
+  .illustration {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1280px) {
+  .illustration {
+    margin-left: 30px;
+    min-width: 600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .illustration {
+    margin-left: 0;
+  }
+}
+
+.stars {
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  color: var(--stars-color);
+  font-size: 15px;
+  align-items: center;
+  line-height: 1;
+}
+
+.starText {
+  display: inline-block;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-left: 0.6rem;
+}
+
+.stars svg + svg {
+  margin-left: 3px;
+}
+
+.stars svg:last-of-type {
+  color: rgba(2, 7, 62, 0.2);
+}

@@ -1,0 +1,89 @@
+.faqSection {
+  margin: 5rem 2rem 2rem;
+}
+
+.heading {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.heading h2 {
+  font-size: 2.2rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 70px;
+}
+
+.content {
+  justify-content: flex-start;
+  /* flex: 0 0 100%; */
+  max-width: 20%;
+  margin: 1.6rem 0 0 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.content h3 {
+  font-weight: 600;
+}
+
+.content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.47;
+  color: var(--text-primary);
+  opacity: 0.7;
+  margin: 5px auto 25px;
+  padding-right: 0;
+}
+
+.faqWrapper {
+  max-width: 75%;
+  margin-left: 2rem;
+  margin-right: auto;
+}
+
+@media (max-width: 1200px) {
+  .flex {
+    flex-direction: column-reverse;
+  }
+
+  .faqWrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .faqWrapper {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 578px) {
+  .faqSection {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .faqWrapper {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 725px) {
+  .content {
+    text-align: left;
+  }
+}
