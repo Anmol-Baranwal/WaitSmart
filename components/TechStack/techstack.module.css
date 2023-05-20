@@ -78,7 +78,7 @@
 }
 
 .content h3 {
-  color: #0f2137;
+  color: var(--text-black);
   font-weight: 700;
   font-size: 23px;
   max-width: 100%;
@@ -89,7 +89,7 @@
 }
 
 .content p {
-  color: #02073e;
+  color: var(--primary-300);
   font-size: 16px;
   line-height: 2;
   margin-bottom: 30px;

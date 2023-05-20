@@ -281,7 +281,7 @@
   margin-top: 0;
   margin-bottom: 20px;
   display: flex;
-  color: #ef9e48;
+  color: var(--stars-color);
   font-size: 15px;
   align-items: center;
   line-height: 1;

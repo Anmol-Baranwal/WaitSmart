@@ -19,5 +19,5 @@
 }
 
 .input[type="email"]:focus {
-  border-color: #db4a87;
+  border-color: var(--primary-200);
 }

@@ -34,7 +34,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.47;
-  color: #343d48;
+  color: var(--text-primary);
   opacity: 0.7;
   margin: 5px auto 25px;
   padding-right: 0;

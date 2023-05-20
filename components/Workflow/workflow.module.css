@@ -1,5 +1,5 @@
 .workflow {
-  background-color: #ea3a60;
+  background-color: var(--primary-200);
   background-image: url("/static/workflow/patternBG.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -27,7 +27,6 @@
   margin: 0 auto;
   margin-top: 1.5rem;
   padding-left: 1rem;
-  /* background-color: #234582; */
 }
 
 @media (min-width: 1220px) {
@@ -69,7 +68,7 @@
   margin-right: 0;
   font-size: 30px;
   font-weight: 700;
-  color: #234582;
+  color: var(--bg-dark);
 }
 
 .wrapper {

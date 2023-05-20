@@ -23,6 +23,6 @@
 }
 
 .rating .star-o {
-  color: #ddd;
+  color: var(--bg-light);
   margin-right: 1px;
 }

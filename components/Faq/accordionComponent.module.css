@@ -1,9 +1,9 @@
 .accordionWrapper {
   margin-bottom: 1.5rem;
   outline: none;
-  border: 0.1px solid #dddada;
+  border: 0.1px solid var(--border-accordion);
   border-radius: 5px;
-  background-color: #f6f8fb;
+  background-color: var(--bg-light);
   transition: background-color 0.3s ease-in-out, box-shadow 0.5s ease-in-out,
     max-height 0.5s ease-in-out, padding-bottom 0.5s ease-in-out;
   overflow: hidden;
@@ -32,7 +32,7 @@
   font-size: 1rem;
   padding-left: 1.5rem;
   display: inline-block;
-  color: #38414c;
+  color: var(--text-primary);
 }
 
 .accordionButton {

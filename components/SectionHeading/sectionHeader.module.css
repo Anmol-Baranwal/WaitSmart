@@ -4,7 +4,7 @@
 }
 
 .white {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .subTitle {
@@ -13,7 +13,7 @@
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
   margin-bottom: 0.5rem;
-  color: #ea3a60;
+  color: var(--primary-200);
   text-transform: capitalize;
 }
 

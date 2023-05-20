@@ -8,8 +8,8 @@ const CustomButton = ({ ...props }) => {
       fontSize={["14px"]}
       sx={{
         marginTop: "0rem",
-        backgroundColor: "#DB4A87",
-        color: "#fff",
+        backgroundColor: "var(--primary-200)",
+        color: "var(--color-white)",
         outline: 0,
         borderRadius: ".3rem",
         padding: "1rem 2.5rem",
@@ -19,7 +19,7 @@ const CustomButton = ({ ...props }) => {
         border: "none",
         _hover: {
           transition: ".3s ease-in-out",
-          backgroundColor: "#02073E",
+          backgroundColor: "var(--primary-300)",
         },
       }}
       as="button"

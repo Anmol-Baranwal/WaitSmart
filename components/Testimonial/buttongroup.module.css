@@ -14,7 +14,7 @@
   font-size: 40px;
   cursor: pointer;
   padding: 2px;
-  color: #bbc7d7;
+  color: var(--text-secondary);
   transition: all 0.25s;
 }
 

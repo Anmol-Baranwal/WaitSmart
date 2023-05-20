@@ -3,7 +3,7 @@
   outline: none;
   border: none;
   border-radius: 5px;
-  background-color: #f6f8fb;
+  background-color: var(--bg-light);
   transition: background-color 0.3s ease-in-out, box-shadow 0.5s ease-in-out,
     max-height 0.5s ease-in-out;
   overflow: hidden;
@@ -26,7 +26,7 @@
   font-size: 1rem;
   padding-left: 1.5rem;
   display: inline-block;
-  color: #38414c;
+  color: var(--text-primary);
 }
 
 .accordionButton {
@@ -56,7 +56,6 @@
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   background-color: transparent;
-  /* background-color: #ebebeb; */
   box-shadow: 0px 9px 30px rgba(40, 48, 75, 0.08);
 }
 

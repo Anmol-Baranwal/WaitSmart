@@ -1,7 +1,7 @@
 .subscribe {
   padding-top: 80px;
   padding-bottom: 80px;
-  background-color: #020718;
+  background-color: var(--subscribe-bg);
   width: 100vw;
 }
 
@@ -10,7 +10,7 @@
   text-align: center;
   font-size: 28px;
   line-height: 1;
-  color: #fff;
+  color: var(--color-white);
   letter-spacing: 0.5px;
   margin-bottom: 15px;
   width: 70%;
@@ -22,7 +22,7 @@
 .subscribe p {
   font-family: "DM Sans", sans-serif;
   font-size: 16px;
-  color: #fff;
+  color: var(--color-white);
   opacity: 0.6;
   letter-spacing: -0.5px;
   text-align: center;
@@ -68,10 +68,10 @@
 }
 
 .subscribe button {
-  background-color: #fff;
+  background-color: var(--color-white);
   font-weight: 500;
   font-size: 18px;
-  color: #020718;
+  color: var(--subscribe-bg);
   letter-spacing: -0.2px;
   border-radius: 45px;
   margin: 10px;
@@ -79,7 +79,7 @@
 }
 
 .subscribe button:hover {
-  background-color: #fff;
+  background-color: var(--color-white);
   opacity: 0.8;
 }
 
