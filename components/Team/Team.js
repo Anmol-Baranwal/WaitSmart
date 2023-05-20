@@ -12,6 +12,9 @@ import {
   FaDribbble,
   FaUserCircle,
 } from "react-icons/fa";
+
+import { IoMdMail } from "react-icons/io";
+
 import data from "@/data/team.json";
 import styles from "./team.module.css";
 
@@ -26,6 +29,7 @@ const Team = () => {
     producthunt: <FaProductHunt />,
     dribbble: <FaDribbble />,
     user: <FaUserCircle />,
+    mail: <IoMdMail />,
   };
 
   return (
