@@ -88,11 +88,22 @@ body {
 
 :root {
   --text-black: #111827;
-  --primary-200: #fe7624;
-  --primary-300: #feba91;
-  --accent-100: #f5f5f5;
-  --bg-100: #1d1f21;
-  --bg-200: #2c2e30;
+  --color-white: #fff;
+  --primary-200: #db4a87;
+  --primary-300: #02073e;
+  --primary-400: #ea3a60;
+  --bg-light: #f6f8fb;
+  --bg-dark: #1d1f21; /* can also use: 1f252c */
   --text-primary: #404b5e;
   --text-secondary: #a3b1c7;
+  --stars-color: #ef9e48;
+  --border-accordion: #dddada;
+  --footer-bg: #020611;
+  --subscribe-bg: #020718;
 }
+/* rgba(2, 7, 62, 0.2) 
+  --primary-200: #fe7624;
+  --primary-300: #feba91;
+  --bg-200: #2c2e30;
+  --bg-secondary: #1f252c;
+  */
