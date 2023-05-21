@@ -10,7 +10,7 @@ export default function Logo({ image }) {
         as="a"
         style={{ variant: "links.logo", display: "flex", alignItems: "center" }}
       >
-        <Image src={iconPath} alt="wait smart logo" />
+        <Image src={iconPath} alt="wait smart logo" className="brandLogo" />
       </ChakraLink>
     </Link>
   );
