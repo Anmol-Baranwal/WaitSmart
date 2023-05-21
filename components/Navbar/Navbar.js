@@ -57,7 +57,11 @@ const Navbar = () => {
               <CustomButton className={styles.btn} text="Login" path="#">
                 Login
               </CustomButton>
-              <CustomButton className={styles.btn} text="Choose" path="#">
+              <CustomButton
+                className={styles.btn}
+                text="Choose"
+                path="appointment"
+              >
                 Appointment
               </CustomButton>
             </Box>
