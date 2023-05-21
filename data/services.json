@@ -2,19 +2,19 @@
   {
     "id": 1,
     "icon": "individual",
-    "title": "For Individuals",
-    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+    "title": "Deliver better customer experiences",
+    "description": "Bring structure and certainty to your waiting room with easy self check-in, automatic service assignment upon arrival, regular updates through their phones or in-branch displays, and clear navigation."
   },
   {
     "id": 2,
     "icon": "team",
-    "title": "For Team",
-    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+    "title": "Increase staff efficiency",
+    "description": "With automated notifications, customer segmentation, and real-time dashboard, we help your staff to be more productive and efficient when managing customer flow."
   },
   {
     "id": 3,
     "icon": "org",
-    "title": "For Organization",
-    "description": "Get your info tests delivered at home collect a sample from the your progress tests."
+    "title": "Improve services and operations",
+    "description": "Integrate and combine the systems you're comfortable with to cut administration costs, optimize service capacity, and improve customer and employee experiences."
   }
 ]

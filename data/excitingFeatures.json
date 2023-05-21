@@ -1,17 +1,22 @@
 [
   {
     "id": 1,
-    "title": "Organize your project content",
-    "contents": "Get your blood tests delivered at let collect sample from the victory of the managements that supplies best design system guidelines ever."
+    "title": "Appointment Scheduling",
+    "contents": "An appointment scheduling system allows patients to book their visits in advance. This helps in distributing the patient load evenly throughout the day and reduces overcrowding during peak hours."
   },
   {
     "id": 2,
-    "title": "Collaborate your documents easily",
-    "contents": "Get your blood tests delivered at let collect sample from the victory of the managements that supplies best design system guidelines ever."
+    "title": "Real-Time Queue Updates",
+    "contents": "Provide real-time updates on waiting times to patients. Display screens or mobile apps can inform patients about their current position in the queue and estimated waiting times, keeping them informed and reducing anxiety."
   },
   {
     "id": 3,
-    "title": "Build your team's knowledge base",
-    "contents": "Get your blood tests delivered at let collect sample from the victory of the managements that supplies best design system guidelines ever."
+    "title": "Efficient Staff Allocation",
+    "contents": "Optimize staff allocation based on patient flow and demand. Monitor queue data and adjust the number of healthcare professionals and support staff accordingly to ensure timely assistance to patients."
+  },
+  {
+    "id": 4,
+    "title": "Clear Communication",
+    "contents": "Ensure clear communication with patients regarding wait times, delays, and any changes in the schedule. Transparent and timely communication helps manage patient expectations and reduces frustration."
   }
 ]

@@ -15,8 +15,8 @@ const Services = () => {
       <Container>
         <SectionHeading
           className={styles.heading}
-          title="Successful business starts with great features"
-          description="Build an incredible workplace and grow your business with Gusto’s all-in-one platform with amazing content."
+          title="Values of WaitSmart"
+          description="Build an incredible workplace and grow your business with WaitSmart all-in-one platform with amazing content."
         />
         <Box className={styles.features}>
           {data.map((item) => (

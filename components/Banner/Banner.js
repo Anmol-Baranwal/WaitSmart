@@ -22,12 +22,10 @@ const Banner = () => {
             </Box>
             <Heading as="h1" className={styles.bannerHeading}>
               {/* `${styles.h1} ${styles.bannerHeading}` */}
-              Build your audience &amp; grow your business online smarter
+              Shorter queues, happier customers
             </Heading>
             <Text className={`${styles.p} ${styles.bannerSubHeading}`}>
-              Get your blood tests delivered at let home collect sample from the
-              victory of the managements that supplies best design system
-              guidelines ever.
+            Queue management system for better waiting line experience in walk‑in locations.
             </Text>
             <Box className={styles.subscribe}>
               <CustomInput
