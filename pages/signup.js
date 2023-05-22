@@ -1,3 +1,4 @@
+// "use client";
 import { useState } from "react";
 import {
   Box,
@@ -13,6 +14,8 @@ import CustomButton from "@/components/Button/CustomButton";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
+import signUp from "@/lib/firebase/auth/signup";
+
 const Signup = () => {
   const router = useRouter();
   const toast = useToast();
@@ -24,29 +27,39 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleSignup = (e) => {
-    // e.preventDefault();
+  const doctorId = `4zH5iYM4wJo`;
 
-    console.log({ firstName, lastName, email, password, aadhaarCard });
-    // Validate form inputs
-    if (
-      !validateName(firstName) ||
-      !validateName(lastName) ||
-      !validateAadhaarCard(aadhaarCard) ||
-      !phoneNumber.match(/^\d+$/) ||
-      !email.includes("@") ||
-      password.length < 6
-    ) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields correctly",
-        status: "error",
-        duration: 3000,
-        isClosable: true,
-      });
-      return;
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    const { result, error } = await signUp(email, password);
+
+    if (error) {
+      return console.log(error);
     }
+    // we have successfully signed up if it reaches here
+    console.log(result);
+    return router.push(`doctor/${doctorId}`);
 
+    // e.preventDefault();
+    // console.log({ firstName, lastName, email, password, aadhaarCard });
+    // Validate form inputs
+    // if (
+    // /  !validateName(firstName) ||
+    // /  !validateName(lastName) ||
+    // /  !validateAadhaarCard(aadhaarCard) ||
+    // /  !phoneNumber.match(/^\d+$/) ||
+    // /  !email.includes("@") ||
+    //   password.length < 6
+    // ) {
+    //   toast({
+    //     title: "Error",
+    //     description: "Please fill in all required fields correctly",
+    //     status: "error",
+    //     duration: 3000,
+    //     isClosable: true,
+    //   });
+    //   return;
+    // }
     // Handle signup logic here
   };
 
@@ -70,7 +83,7 @@ const Signup = () => {
         <Divider orientation="horizontal" className={styles.divider} />
 
         <form onSubmit={handleSignup}>
-          <FormControl id="firstName" className={styles.formControl}>
+          {/* <FormControl id="firstName" className={styles.formControl}>
             <FormLabel className={styles.formLabel}>First Name</FormLabel>
             <Input
               type="text"
@@ -114,28 +127,35 @@ const Signup = () => {
               className={styles.input}
               placeholder="Enter your phone number"
             />
-          </FormControl>
+          </FormControl> */}
 
-          <FormControl id="email" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Email</FormLabel>
             <Input
               type="email"
               value={email}
+              name="email"
+              id="email"
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
               placeholder="Enter your email address"
+              required
             />
           </FormControl>
 
-          <FormControl id="password" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Password</FormLabel>
             <div className={styles.passwordInputContainer}>
               <Input
-                type={showPassword ? "text" : "password"}
+                // type={showPassword ? "text" : "password"}
+                type="password"
+                id="password"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className={styles.input}
                 placeholder="Enter your password"
+                required
               />
               <div
                 className={styles.passwordIcon}
