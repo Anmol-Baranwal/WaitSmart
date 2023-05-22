@@ -115,10 +115,11 @@
   color: var(--text-secondary);
 }
 
-.formControl input:invalid {
-  border-color: #ff0000; /* Red border color for invalid input */
+/* Red border color for invalid input */
+/* .formControl input:invalid {
+  border-color: #ff0000; 
 }
 
 .formControl input:invalid::placeholder {
-  color: #ff0000; /* Red placeholder color for invalid input */
-}
+  color: #ff0000; 
+} */
