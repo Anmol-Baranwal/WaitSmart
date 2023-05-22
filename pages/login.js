@@ -1,19 +1,12 @@
 import { useState } from "react";
-import {
-  Box,
-  FormControl,
-  FormLabel,
-  Input,
-  Button,
-  Tab,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-} from "@chakra-ui/react";
+import { Box, FormControl, FormLabel, Input, Divider } from "@chakra-ui/react";
+import Link from "next/link";
+import CustomButton from "@/components/Button/CustomButton";
+import { useRouter } from "next/router";
 import styles from "@/styles/login.module.css";
 
 const Signup = () => {
+  const router = useRouter();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [aadhaarCard, setAadhaarCard] = useState("");
@@ -28,124 +21,62 @@ const Signup = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Handle login logic here
+    // Check if email exists in the database, if not, route to signup page
+    const emailExists = false; // Replace this with your logic to check if the email exists
+    if (!emailExists) {
+      router.push("/signup"); // Route to the signup page
+    } else {
+      // Handle login logic here
+    }
   };
 
   return (
-    <Box className={styles.container}>
-      <Tabs isLazy>
-        <TabList>
-          <Tab>Login</Tab>
-          <Tab>Signup</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <TabPanel>
-              <form onSubmit={handleLogin}>
-                <FormControl id="email" className={styles.formControl}>
-                  <FormLabel className={styles.formLabel}>Email</FormLabel>
-                  <Input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className={styles.input}
-                  />
-                </FormControl>
+    <section className={styles.section}>
+      <Box className={styles.container}>
+        <Divider orientation="horizontal" className={styles.divider} />
 
-                <FormControl id="password" className={styles.formControl}>
-                  <FormLabel className={styles.formLabel}>Password</FormLabel>
-                  <Input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className={styles.input}
-                  />
-                </FormControl>
+        <form onSubmit={handleLogin}>
+          <FormControl id="email" className={styles.formControl}>
+            <FormLabel className={styles.formLabel}>Email</FormLabel>
+            <Input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={styles.input}
+              placeholder="Enter your email"
+            />
+          </FormControl>
 
-                <Button
-                  type="submit"
-                  colorScheme="teal"
-                  className={styles.button}
-                >
-                  Login
-                </Button>
-              </form>
-            </TabPanel>
-          </TabPanel>
-          <TabPanel>
-            <form onSubmit={handleSignup}>
-              <FormControl id="firstName" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>First Name</FormLabel>
-                <Input
-                  type="text"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
+          <FormControl id="password" className={styles.formControl}>
+            <FormLabel className={styles.formLabel}>Password</FormLabel>
+            <Input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+              placeholder="Enter your password"
+            />
+          </FormControl>
 
-              <FormControl id="lastName" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>Last Name</FormLabel>
-                <Input
-                  type="text"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
+          <CustomButton type="submit" className={styles.btn}>
+            Login
+          </CustomButton>
+        </form>
 
-              <FormControl id="aadhaarCard" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>Aadhaar Card</FormLabel>
-                <Input
-                  type="text"
-                  value={aadhaarCard}
-                  onChange={(e) => setAadhaarCard(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
-
-              <FormControl id="phoneNumber" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>Phone Number</FormLabel>
-                <Input
-                  type="text"
-                  value={phoneNumber}
-                  onChange={(e) => setPhoneNumber(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
-
-              <FormControl id="email" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>Email</FormLabel>
-                <Input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
-
-              <FormControl id="password" className={styles.formControl}>
-                <FormLabel className={styles.formLabel}>Password</FormLabel>
-                <Input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className={styles.input}
-                />
-              </FormControl>
-
-              <Button
-                type="submit"
-                colorScheme="teal"
-                className={styles.button}
-              >
-                Signup
-              </Button>
-            </form>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </Box>
+        <p className={styles.switchTxt}>
+          Dont have an account?{" "}
+          <Link className={styles.switchLink} href="/signup">
+            Sign up
+          </Link>
+          {/* <span
+            className={styles.signupLink}
+            onClick={() => router.push("/signup")}
+          >
+            Sign up
+          </span> */}
+        </p>
+      </Box>
+    </section>
   );
 };
 
