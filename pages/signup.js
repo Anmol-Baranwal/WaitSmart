@@ -25,28 +25,27 @@ const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSignup = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
+    console.log({ firstName, lastName, email, password, aadhaarCard });
     // Validate form inputs
     if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !aadhaarCard.trim() ||
-      !phoneNumber.trim() ||
-      !email.trim() ||
-      !password.trim()
+      !validateName(firstName) ||
+      !validateName(lastName) ||
+      !validateAadhaarCard(aadhaarCard) ||
+      !phoneNumber.match(/^\d+$/) ||
+      !email.includes("@") ||
+      password.length < 6
     ) {
       toast({
         title: "Error",
-        description: "Please fill in all required fields",
+        description: "Please fill in all required fields correctly",
         status: "error",
         duration: 3000,
         isClosable: true,
       });
       return;
     }
-
-    // Additional validation logic here
 
     // Handle signup logic here
   };
@@ -79,7 +78,7 @@ const Signup = () => {
               onChange={(e) => setFirstName(e.target.value)}
               className={styles.input}
               placeholder="Enter your first name"
-              isInvalid={firstName && !validateName(firstName)}
+              //   isInvalid={!validateName(firstName)}
             />
           </FormControl>
 
@@ -91,7 +90,6 @@ const Signup = () => {
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
               placeholder="Enter your last name"
-              isInvalid={lastName && !validateName(lastName)}
             />
           </FormControl>
 
@@ -104,7 +102,6 @@ const Signup = () => {
               className={styles.input}
               placeholder="Enter your Aadhaar card number"
               maxLength={12}
-              isInvalid={aadhaarCard && !validateAadhaarCard(aadhaarCard)}
             />
           </FormControl>
 
@@ -116,7 +113,6 @@ const Signup = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               className={styles.input}
               placeholder="Enter your phone number"
-              isInvalid={phoneNumber && !phoneNumber.match(/^\d+$/)}
             />
           </FormControl>
 
@@ -127,8 +123,7 @@ const Signup = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
-              placeholder="Enter your email"
-              isInvalid={email && !email.includes("@")}
+              placeholder="Enter your email address"
             />
           </FormControl>
 
@@ -141,7 +136,6 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className={styles.input}
                 placeholder="Enter your password"
-                isInvalid={password && password.length < 6}
               />
               <div
                 className={styles.passwordIcon}
@@ -153,12 +147,12 @@ const Signup = () => {
           </FormControl>
 
           <CustomButton type="submit" className={styles.btn}>
-            Signup
+            Sign up
           </CustomButton>
         </form>
 
         <p className={styles.switchTxt}>
-          Already have an account?{" "}
+          Dont have an account?{" "}
           <Link className={styles.switchLink} href="/login">
             Login
           </Link>
