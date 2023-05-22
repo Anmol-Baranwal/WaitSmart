@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Box, FormControl, FormLabel, Input, Divider } from "@chakra-ui/react";
-import styles from "@/styles/login.module.css";
+import styles from "@/styles/auth.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import { useRouter } from "next/router";
 import Link from "next/link";
