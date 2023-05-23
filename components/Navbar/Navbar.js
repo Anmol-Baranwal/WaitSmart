@@ -54,7 +54,7 @@ const Navbar = () => {
               ))}
             </Box>
             <Box className={styles.buttonWrapper}>
-              <CustomButton className={styles.btn} text="Login" path="#">
+              <CustomButton className={styles.btn} text="Login" path="/login">
                 Login
               </CustomButton>
               <CustomButton

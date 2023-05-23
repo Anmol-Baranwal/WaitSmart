@@ -1,7 +1,13 @@
 import { Button } from "@chakra-ui/react";
 import Link from "next/link";
 
-const CustomButton = ({ path, ...props }) => {
+const CustomButton = ({ onClick, path, ...props }) => {
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   const href = path || "";
   return (
     <Link href={href} passHref>
@@ -27,6 +33,7 @@ const CustomButton = ({ path, ...props }) => {
             backgroundColor: "var(--primary-300)",
           },
         }}
+        onClick={handleClick}
         {...props}
       />
     </Link>
