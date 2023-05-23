@@ -302,3 +302,26 @@
 .stars svg:last-of-type {
   color: rgba(2, 7, 62, 0.2);
 }
+
+@media (min-width: 320px) {
+  .contentWrapper {
+    max-width: 80vw;
+  }
+
+  .sponsoredBy {
+    margin-left: -5rem;
+  }
+
+  .subscribe {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .subscribe input {
+    border: 1px solid var(--text-black);
+  }
+
+  .subscribe button {
+    margin-top: 1rem;
+  }
+}
