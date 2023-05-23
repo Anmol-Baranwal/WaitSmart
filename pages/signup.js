@@ -1,4 +1,8 @@
 // "use client";
+import firebase from "firebase/app";
+// import "firebase/firestore";
+import { firebase_app, firestore } from "@/firebaseConfig";
+
 import { useState } from "react";
 import {
   Box,
@@ -7,6 +11,7 @@ import {
   Input,
   Divider,
   useToast,
+  Button,
 } from "@chakra-ui/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import styles from "@/styles/auth.module.css";
@@ -27,20 +32,39 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const doctorId = `4zH5iYM4wJo`;
+  const doctorId = `4zH5iYM4wJo`; // to use as default value for doctor dynamic user id
 
   const handleSignup = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+
+    console.log(e);
+
     const { result, error } = await signUp(email, password);
 
-    if (error) {
-      return console.log(error);
-    }
-    // we have successfully signed up if it reaches here
-    console.log(result);
-    return router.push(`doctor/${doctorId}`);
+    console.log({ result, error });
 
-    // e.preventDefault();
+    // Assuming you have the user object with additional details
+    const user = {
+      firstName,
+      lastName,
+      phoneNumber,
+      aadhaarCard,
+      // email: result.user.email, // Store the user's email
+    };
+
+    // Get the Firestore instance
+    // const firestore = firebase.firestore();
+
+    // // Create a new document in the 'users' collection with the user details
+    // await firestore.collection("users").doc(result.user.uid).set(user);
+
+    // if (error) {
+    //   return console.log(error);
+    // }
+    // // we have successfully signed up if it reaches here
+
+    // return router.push(`doctor/${result.user.uid}`);
+
     // console.log({ firstName, lastName, email, password, aadhaarCard });
     // Validate form inputs
     // if (
@@ -83,51 +107,59 @@ const Signup = () => {
         <Divider orientation="horizontal" className={styles.divider} />
 
         <form onSubmit={handleSignup}>
-          {/* <FormControl id="firstName" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>First Name</FormLabel>
             <Input
               type="text"
               value={firstName}
+              id="firstName"
               onChange={(e) => setFirstName(e.target.value)}
               className={styles.input}
               placeholder="Enter your first name"
+              required
               //   isInvalid={!validateName(firstName)}
             />
           </FormControl>
 
-          <FormControl id="lastName" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Last Name</FormLabel>
             <Input
               type="text"
               value={lastName}
+              id="lastName"
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
               placeholder="Enter your last name"
+              required
             />
           </FormControl>
 
-          <FormControl id="aadhaarCard" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Aadhaar Card</FormLabel>
             <Input
               type="text"
               value={aadhaarCard}
+              id="aadhaarCard"
               onChange={(e) => setAadhaarCard(e.target.value)}
               className={styles.input}
               placeholder="Enter your Aadhaar card number"
               maxLength={12}
+              required
             />
           </FormControl>
 
-          <FormControl id="phoneNumber" className={styles.formControl}>
+          <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Phone Number</FormLabel>
             <Input
               type="tel"
               value={phoneNumber}
+              id="phoneNumber"
               onChange={(e) => setPhoneNumber(e.target.value)}
               className={styles.input}
               placeholder="Enter your phone number"
+              required
             />
-          </FormControl> */}
+          </FormControl>
 
           <FormControl className={styles.formControl}>
             <FormLabel className={styles.formLabel}>Email</FormLabel>
@@ -166,7 +198,7 @@ const Signup = () => {
             </div>
           </FormControl>
 
-          <CustomButton type="submit" className={styles.btn}>
+          <CustomButton className={styles.btn} onClick={handleSignup}>
             Sign up
           </CustomButton>
         </form>
