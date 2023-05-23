@@ -11,11 +11,6 @@
   },
   {
     "id": 3,
-    "title": "Efficient Staff Allocation",
-    "contents": "Optimize staff allocation based on patient flow and demand. Monitor queue data and adjust the number of healthcare professionals and support staff accordingly to ensure timely assistance to patients."
-  },
-  {
-    "id": 4,
     "title": "Clear Communication",
     "contents": "Ensure clear communication with patients regarding wait times, delays, and any changes in the schedule. Transparent and timely communication helps manage patient expectations and reduces frustration."
   }
