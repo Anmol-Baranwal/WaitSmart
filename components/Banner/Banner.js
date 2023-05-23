@@ -25,7 +25,8 @@ const Banner = () => {
               Shorter queues, happier customers
             </Heading>
             <Text className={`${styles.p} ${styles.bannerSubHeading}`}>
-            Queue management system for better waiting line experience in walk‑in locations.
+              Queue management system for better waiting line experience in
+              walk‑in locations.
             </Text>
             <Box className={styles.subscribe}>
               <CustomInput
