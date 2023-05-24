@@ -27,6 +27,7 @@ body:
         - Documentation
         - Algorithm 
         - CI/CD
+        - Content
     validations:
       required: false
   - type: input

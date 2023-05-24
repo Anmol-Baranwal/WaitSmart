@@ -12,6 +12,7 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react";
+import Logo from "../Logo";
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -36,7 +37,13 @@ const Navbar = () => {
       <Container>
         <Box className={styles.navbarContainer}>
           <Link href="/" className={styles.logo}>
-            Logo
+            {/* <Image
+              src="/static/icons/logo.png"
+              alt="brand logo"
+              width="57"
+              height="70"
+            /> */}
+            <Logo image="logo" />
           </Link>
           <Box className={styles.content}>
             <Box

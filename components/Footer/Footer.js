@@ -3,6 +3,7 @@ import { Box, Text, Container } from "@chakra-ui/react";
 import Link from "next/link";
 import styles from "./footer.module.css";
 import Image from "next/image";
+import Logo from "../Logo";
 
 export default function Footer() {
   const links = [
@@ -17,12 +18,19 @@ export default function Footer() {
     <Box as="footer" className={styles.footer}>
       <Container className={styles.container}>
         <Box className={styles.linksWrap}>
-          <Image
+          {/* <Image
             src="/static/icons/org.png"
             alt="smart wait logo"
             width="30"
             height="30"
             className={styles.logoImage}
+          /> */}
+          <Logo
+            image="logo"
+            width="28"
+            height="35"
+            className={styles.logoImage}
+            as="img"
           />
           <Text as="p" className={styles.text}>
             Copyright &copy; {new Date().getFullYear()} waitSmart, Inc

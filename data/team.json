@@ -4,7 +4,7 @@
     "imgSrc": "Member1",
     "altText": "Jai Garg",
     "title": "Jai Garg",
-    "designation": "",
+    "designation": "Frontend Developer",
     "socialProfile": [
       {
         "id": 1,
@@ -31,7 +31,7 @@
     "imgSrc": "Member2",
     "altText": "Anmol Baranwal",
     "title": "Aanmol Baranwal",
-    "designation": "Developer",
+    "designation": "Full Stack Developer",
     "socialProfile": [
       {
         "id": 1,
@@ -82,7 +82,7 @@
     "imgSrc": "Member3",
     "altText": "Aman Garg",
     "title": "Aman Garg",
-    "designation": "",
+    "designation": "Frontend Developer",
     "socialProfile": [
       {
         "id": 1,
