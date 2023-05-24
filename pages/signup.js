@@ -1,6 +1,4 @@
 // "use client";
-import firebase from "firebase/app";
-// import "firebase/firestore";
 import { firebase_app, firestore } from "@/firebaseConfig";
 
 import { useState } from "react";
@@ -18,6 +16,7 @@ import styles from "@/styles/auth.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import addData from "@/lib/firebase/firestore/addData"; // addData function to add data in firestore
 
 import signUp from "@/lib/firebase/auth/signup";
 
@@ -43,27 +42,32 @@ const Signup = () => {
 
     console.log({ result, error });
 
-    // Assuming you have the user object with additional details
-    const user = {
-      firstName,
-      lastName,
-      phoneNumber,
-      aadhaarCard,
-      // email: result.user.email, // Store the user's email
-    };
+    if (result && result.user) {
+      const user = {
+        firstName,
+        lastName,
+        phoneNumber,
+        aadhaarCard,
+        email: result.user.email, // Store the user's email
+      };
 
-    // Get the Firestore instance
-    // const firestore = firebase.firestore();
+      const { result: addDataResult, error: addDataError } = await addData(
+        "users", // Collection name
+        result.user.uid, // Document ID
+        user // Data to be added
+      );
 
-    // // Create a new document in the 'users' collection with the user details
-    // await firestore.collection("users").doc(result.user.uid).set(user);
+      if (addDataError) {
+        console.log(addDataError);
+        return;
+      }
 
-    // if (error) {
-    //   return console.log(error);
-    // }
-    // // we have successfully signed up if it reaches here
-
-    // return router.push(`doctor/${result.user.uid}`);
+      // Successful signup and data addition
+      router.push(`doctor/${result.user.uid}`);
+    } else {
+      // Handle the case when result is null or user property is missing
+      console.log("Error: Unable to add user information");
+    }
 
     // console.log({ firstName, lastName, email, password, aadhaarCard });
     // Validate form inputs
