@@ -1,16 +1,7 @@
 import Head from "next/head";
+import Homepage from "./homepage";
+
 import styles from "@/styles/Home.module.css";
-import Banner from "@/components/Banner/Banner";
-import Services from "@/components/Services/Services";
-import Subscribe from "@/components/Subscribe/Subscribe";
-import Footer from "@/components/Footer/Footer";
-import TechStack from "@/components/TechStack/TechStack";
-import Team from "@/components/Team/Team";
-import WorkFlow from "@/components/Workflow/workflow";
-// import Testimonial from "@/components/Testimonial/Testimonial";
-import ExcitingFeatures from "@/components/ExcitingFeatures/ExcitingFeatures";
-import Faq from "@/components/Faq/Faq";
-import Navbar from "@/components/Navbar/Navbar";
 
 export default function Home() {
   return (
@@ -22,17 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <Navbar />
-        <Banner />
-        <Services />
-        <ExcitingFeatures />
-        <TechStack />
-        <Team />
-        <WorkFlow />
-        <Faq />
-        <Subscribe />
-        <Footer />
-        {/* <Testimonial /> */}
+        <Homepage />
       </div>
     </>
   );

@@ -1,0 +1,125 @@
+.section {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: rgb(33, 20, 51);
+  background: radial-gradient(
+    circle,
+    rgba(33, 20, 51, 1) 0%,
+    rgba(34, 18, 57, 1) 21%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.container {
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 32rem;
+  margin: 0 auto;
+  background-color: var(--bg-light);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.tab {
+  margin: 1rem auto 1rem 7.8rem;
+}
+
+.tabItem {
+  padding: 12px 18px;
+  margin-left: 1.5rem;
+  color: #ccc;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.divider {
+  background-color: var(--bg-dark);
+  height: 1px;
+  max-width: 10rem;
+  margin: 0.5rem auto 1rem;
+}
+
+.formControl {
+  margin-bottom: 16px;
+}
+
+.formLabel {
+  color: var(--text-black);
+  padding-left: 0.3rem;
+}
+
+.formControl input {
+  outline: none;
+  font-size: 16px;
+  padding-left: 1rem;
+  text-align: left;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.formControl input::placeholder {
+  letter-spacing: 0.04rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container button {
+  background-color: var(--primary-300);
+}
+
+.container button:hover {
+  background-color: var(--primary-200);
+}
+
+.switchTxt {
+  padding: 0.5rem 0 0rem 1rem;
+}
+
+.switchLink {
+  color: var(--primary-300);
+  padding-left: 0.1rem;
+}
+
+/* .phoneIconWrapper {
+  background-color: #ccc;
+} */
+
+.passwordInputContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.passwordIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+/* Red border color for invalid input */
+/* .formControl input:invalid {
+  border-color: #ff0000; 
+}
+
+.formControl input:invalid::placeholder {
+  color: #ff0000; 
+} */
