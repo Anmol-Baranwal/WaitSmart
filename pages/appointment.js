@@ -10,7 +10,7 @@ import {
 import styles from "@/styles/appointment.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import Image from "next/image";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 import { firebase_app } from "@/firebaseConfig";
 
 const db = getFirestore(firebase_app);
@@ -28,9 +28,11 @@ const Appointment = () => {
       try {
         const usersCollectionRef = collection(db, "users");
         const usersSnapshot = await getDocs(usersCollectionRef);
-        const doctorsData = usersSnapshot.docs.map((doc) => doc.data());
-        const doctorNames = doctorsData.map((doctor) => doctor.name);
-        setDoctors(doctorNames);
+        const doctorDataArray = usersSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().firstName + " " + doc.data().lastName,
+        }));
+        setDoctors(doctorDataArray);
       } catch (error) {
         console.log(error);
       }
@@ -131,8 +133,8 @@ const Appointment = () => {
               placeholder="Choose your doctor"
             >
               {doctors.map((doctor) => (
-                <option key={doctor} value={doctor}>
-                  {doctor}
+                <option key={doctor.id} value={doctor.id}>
+                  {doctor.name}
                 </option>
               ))}
             </Select>
