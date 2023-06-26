@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   FormControl,
@@ -6,13 +6,15 @@ import {
   Input,
   Select,
   Divider,
-  Avatar,
-  AvatarBadge,
-  AvatarGroup,
 } from "@chakra-ui/react";
 import styles from "@/styles/appointment.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import Image from "next/image";
+import getData from "@/lib/firebase/firestore/getData";
+import { firebase_app } from "@/firebaseConfig";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+const db = getFirestore(firebase_app);
 
 const Appointment = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,11 +22,64 @@ const Appointment = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState("");
   const [city, setCity] = useState("");
+  const [doctors, setDoctors] = useState([]); // State for storing the fetched doctors
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { result, error } = await getData("users");
+        if (result) {
+          const names = result.docs.map((doc) => doc.data().firstName);
+          setDoctors(names);
+        } else {
+          console.log(error);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    // access the form values using the state variables (e.g., firstName, lastName, contactNumber, selectedDoctor, city)
+
+    try {
+      const doctorsCollectionRef = collection(db, "doctors");
+
+      const doctorData = {
+        name: selectedDoctor,
+      };
+
+      // Create a new doctor document in the "doctors" collection
+      const newDoctorDoc = await addDoc(doctorsCollectionRef, doctorData);
+
+      const doctorId = newDoctorDoc.id;
+
+      const patientData = {
+        firstName,
+        lastName,
+        contactNumber,
+        city,
+      };
+
+      // Create a new patient document within the "patients" subcollection of the selected doctor
+      const patientsCollectionRef = collection(
+        doctorsCollectionRef,
+        doctorId,
+        "patients"
+      );
+      const newPatientDoc = await addDoc(patientsCollectionRef, patientData);
+
+      const patientId = newPatientDoc.id;
+
+      console.log("Appointment created successfully with doctor ID:", doctorId);
+      console.log("Patient data added successfully with ID:", patientId);
+    } catch (error) {
+      console.log(error);
+      // Handle error from the API request
+    }
   };
 
   return (
@@ -39,24 +94,6 @@ const Appointment = () => {
             height="30"
           />
         </Box>
-        {/* <AvatarGroup size="md" max={3} className={styles.avatarGroup}>
-          <Avatar
-            name="User 1"
-            src="/static/team/Member2.png"
-            className={styles.avatar}
-          />
-          <Avatar
-            name="User 2"
-            src="/static/team/Member1.png"
-            className={styles.avatar}
-          />
-          <Avatar
-            name="User 3"
-            src="/static/team/Member2.png"
-            className={styles.avatar}
-          />
-          <Avatar name="+3" className={styles.avatar} />
-        </AvatarGroup> */}
         <Divider orientation="horizontal" className={styles.divider} />
         <form onSubmit={handleSubmit}>
           <FormControl className={styles.formControl} id="firstName">
@@ -100,8 +137,11 @@ const Appointment = () => {
               className={styles.select}
               placeholder="Choose your doctor"
             >
-              <option value="doctor1">Doctor 1</option>
-              <option value="doctor2">Doctor 2</option>
+              {doctors.map((doctor) => (
+                <option key={doctor} value={doctor}>
+                  {doctor}
+                </option>
+              ))}
             </Select>
           </FormControl>
 
