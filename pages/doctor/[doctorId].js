@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import getData from "@/lib/firebase/firestore/getData"; // Import the getData function
+import getData from "@/lib/firebase/firestore/getData";
+import styles from "@/styles/doctor.module.css"; // Import the doctor.module.css file
 
 const Doctor = () => {
   const router = useRouter();
@@ -20,17 +21,34 @@ const Doctor = () => {
   }, [router.query.doctorId]);
 
   if (!userData) {
-    return <div>Loading...</div>;
+    return <div className={styles.loading}>Loading...</div>;
   }
 
   return (
-    <div>
-      {/* <p>Doctor Dynamic page {router.query.doctorId}</p> */}
-      <p>First Name: {userData.firstName}</p>
-      <p>Last Name: {userData.lastName}</p>
-      <p>Email: {userData.email}</p>
-      <p>Phone Number: {userData.phoneNumber}</p>
-      <p>Aadhaar Card: {userData.aadhaarCard}</p>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>
+        {/* Doctor Dynamic Page {router.query.doctorId} */}
+      </h1>
+      <div className={styles.info}>
+        <span className={styles.label}>First Name:</span>
+        <span className={styles.value}>{userData.firstName}</span>
+      </div>
+      <div className={styles.info}>
+        <span className={styles.label}>Last Name:</span>
+        <span className={styles.value}>{userData.lastName}</span>
+      </div>
+      <div className={styles.info}>
+        <span className={styles.label}>Email:</span>
+        <span className={styles.value}>{userData.email}</span>
+      </div>
+      <div className={styles.info}>
+        <span className={styles.label}>Phone Number:</span>
+        <span className={styles.value}>{userData.phoneNumber}</span>
+      </div>
+      <div className={styles.info}>
+        <span className={styles.label}>Aadhaar Card:</span>
+        <span className={styles.value}>{userData.aadhaarCard}</span>
+      </div>
     </div>
   );
 };
