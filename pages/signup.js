@@ -34,7 +34,9 @@ const Signup = () => {
   const doctorId = `4zH5iYM4wJo`; // to use as default value for doctor dynamic user id
 
   const handleSignup = async (e) => {
-    // e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
 
     console.log(e);
 
@@ -53,7 +55,7 @@ const Signup = () => {
 
       const { result: addDataResult, error: addDataError } = await addData(
         "users", // Collection name
-        result.user.uid, // Document ID
+        result.user.uid || doctorId, // Document ID or default value to avoid error
         user // Data to be added
       );
 
@@ -183,8 +185,7 @@ const Signup = () => {
             <FormLabel className={styles.formLabel}>Password</FormLabel>
             <div className={styles.passwordInputContainer}>
               <Input
-                // type={showPassword ? "text" : "password"}
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 value={password}
