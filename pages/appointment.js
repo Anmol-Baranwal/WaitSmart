@@ -10,9 +10,8 @@ import {
 import styles from "@/styles/appointment.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import Image from "next/image";
-import getData from "@/lib/firebase/firestore/getData";
-import { firebase_app } from "@/firebaseConfig";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { firebase_app } from "@/firebaseConfig";
 
 const db = getFirestore(firebase_app);
 
@@ -25,21 +24,19 @@ const Appointment = () => {
   const [doctors, setDoctors] = useState([]); // State for storing the fetched doctors
 
   useEffect(() => {
-    const fetchUserData = async () => {
+    const fetchDoctors = async () => {
       try {
-        const { result, error } = await getData("users");
-        if (result) {
-          const names = result.docs.map((doc) => doc.data().firstName);
-          setDoctors(names);
-        } else {
-          console.log(error);
-        }
+        const usersCollectionRef = collection(db, "users");
+        const usersSnapshot = await getDocs(usersCollectionRef);
+        const doctorsData = usersSnapshot.docs.map((doc) => doc.data());
+        const doctorNames = doctorsData.map((doctor) => doctor.name);
+        setDoctors(doctorNames);
       } catch (error) {
         console.log(error);
       }
     };
 
-    fetchUserData();
+    fetchDoctors();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -48,13 +45,10 @@ const Appointment = () => {
     try {
       const doctorsCollectionRef = collection(db, "doctors");
 
-      const doctorData = {
-        name: selectedDoctor,
-      };
-
       // Create a new doctor document in the "doctors" collection
-      const newDoctorDoc = await addDoc(doctorsCollectionRef, doctorData);
-
+      const newDoctorDoc = await addDoc(doctorsCollectionRef, {
+        name: selectedDoctor,
+      });
       const doctorId = newDoctorDoc.id;
 
       const patientData = {
@@ -71,7 +65,6 @@ const Appointment = () => {
         "patients"
       );
       const newPatientDoc = await addDoc(patientsCollectionRef, patientData);
-
       const patientId = newPatientDoc.id;
 
       console.log("Appointment created successfully with doctor ID:", doctorId);
