@@ -15,8 +15,8 @@ import {
   collection,
   addDoc,
   getDocs,
-  doc,
-  setDoc,
+  query,
+  where,
 } from "firebase/firestore";
 import { firebase_app } from "@/firebaseConfig";
 import { useRouter } from "next/router";
@@ -55,26 +55,56 @@ const Appointment = () => {
     if (e) e.preventDefault();
 
     try {
-      // Create a new doctor document in the "doctors" collection
-      const newDoctorDoc = await addDoc(collection(db, "doctors"), {
-        name: selectedDoctor,
-      });
-      const doctorId = newDoctorDoc.id;
+      const doctorRef = collection(db, "doctors");
+      const doctorQuery = query(doctorRef, where("name", "==", selectedDoctor));
+      const doctorSnapshot = await getDocs(doctorQuery);
 
-      // Create a new document in the "patients" subcollection within the doctor's document
-      const newPatientDoc = await addDoc(
-        collection(db, "doctors", doctorId, "patients"),
-        {
-          firstName,
-          lastName,
-          contactNumber,
-          city,
-        }
-      );
-      const patientId = newPatientDoc.id;
+      if (doctorSnapshot.empty) {
+        // Create a new doctor document in the "doctors" collection
+        const newDoctorDoc = await addDoc(doctorRef, {
+          name: selectedDoctor,
+        });
+        const doctorId = newDoctorDoc.id;
 
-      console.log("Appointment created successfully with doctor ID:", doctorId);
-      console.log("Patient data added successfully with ID:", patientId);
+        // Create a new document in the "patients" subcollection within the doctor's document
+        const newPatientDoc = await addDoc(
+          collection(db, "doctors", doctorId, "patients"),
+          {
+            firstName,
+            lastName,
+            contactNumber,
+            city,
+          }
+        );
+        const patientId = newPatientDoc.id;
+
+        console.log(
+          "Appointment created successfully with doctor ID:",
+          doctorId
+        );
+        console.log("Patient data added successfully with ID:", patientId);
+      } else {
+        // Use the existing doctor ID
+        const doctorId = doctorSnapshot.docs[0].id;
+
+        // Create a new document in the "patients" subcollection within the existing doctor's document
+        const newPatientDoc = await addDoc(
+          collection(db, "doctors", doctorId, "patients"),
+          {
+            firstName,
+            lastName,
+            contactNumber,
+            city,
+          }
+        );
+        const patientId = newPatientDoc.id;
+
+        console.log(
+          "Appointment created successfully with existing doctor ID:",
+          doctorId
+        );
+        console.log("Patient data added successfully with ID:", patientId);
+      }
 
       router.push("/appointment");
     } catch (error) {
