@@ -10,8 +10,16 @@ import {
 import styles from "@/styles/appointment.module.css";
 import CustomButton from "@/components/Button/CustomButton";
 import Image from "next/image";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  doc,
+  setDoc,
+} from "firebase/firestore";
 import { firebase_app } from "@/firebaseConfig";
+import { useRouter } from "next/router";
 
 const db = getFirestore(firebase_app);
 
@@ -21,7 +29,9 @@ const Appointment = () => {
   const [contactNumber, setContactNumber] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState("");
   const [city, setCity] = useState("");
-  const [doctors, setDoctors] = useState([]); // State for storing the fetched doctors
+  const [doctors, setDoctors] = useState([]);
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchDoctors = async () => {
@@ -42,38 +52,33 @@ const Appointment = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    if (e) e.preventDefault();
 
     try {
-      const doctorsCollectionRef = collection(db, "doctors");
-
       // Create a new doctor document in the "doctors" collection
-      const newDoctorDoc = await addDoc(doctorsCollectionRef, {
+      const newDoctorDoc = await addDoc(collection(db, "doctors"), {
         name: selectedDoctor,
       });
       const doctorId = newDoctorDoc.id;
 
-      const patientData = {
-        firstName,
-        lastName,
-        contactNumber,
-        city,
-      };
-
-      // Create a new patient document within the "patients" subcollection of the selected doctor
-      const patientsCollectionRef = collection(
-        doctorsCollectionRef,
-        doctorId,
-        "patients"
+      // Create a new document in the "patients" subcollection within the doctor's document
+      const newPatientDoc = await addDoc(
+        collection(db, "doctors", doctorId, "patients"),
+        {
+          firstName,
+          lastName,
+          contactNumber,
+          city,
+        }
       );
-      const newPatientDoc = await addDoc(patientsCollectionRef, patientData);
       const patientId = newPatientDoc.id;
 
       console.log("Appointment created successfully with doctor ID:", doctorId);
       console.log("Patient data added successfully with ID:", patientId);
+
+      router.push("/appointment");
     } catch (error) {
       console.log(error);
-      // Handle error from the API request
     }
   };
 
@@ -127,6 +132,7 @@ const Appointment = () => {
           <FormControl className={styles.formControl} id="doctor">
             <FormLabel className={styles.label}>Doctor</FormLabel>
             <Select
+              required
               value={selectedDoctor}
               onChange={(e) => setSelectedDoctor(e.target.value)}
               className={styles.select}
@@ -151,7 +157,11 @@ const Appointment = () => {
             />
           </FormControl>
 
-          <CustomButton type="submit" className={styles.btn}>
+          <CustomButton
+            type="submit"
+            className={styles.btn}
+            onClick={handleSubmit}
+          >
             Submit
           </CustomButton>
         </form>
