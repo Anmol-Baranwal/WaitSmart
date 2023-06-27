@@ -34,7 +34,9 @@ const Signup = () => {
   const doctorId = `4zH5iYM4wJo`; // to use as default value for doctor dynamic user id
 
   const handleSignup = async (e) => {
-    // e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
 
     console.log(e);
 
@@ -51,45 +53,55 @@ const Signup = () => {
         email: result.user.email, // Store the user's email
       };
 
-      const { result: addDataResult, error: addDataError } = await addData(
-        "users", // Collection name
-        result.user.uid, // Document ID
-        user // Data to be added
-      );
+      try {
+        const response = await fetch("/api/createUser", {
+          method: "POST",
+          body: JSON.stringify({
+            collectionName: "users", // Specify the collection name
+            data: user, // Data to be added to the collection
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
-      if (addDataError) {
-        console.log(addDataError);
-        return;
+        if (response.ok) {
+          const { docId } = await response.json();
+          router.push(`/doctor/${docId}`);
+        } else {
+          console.log("Error:", response.status);
+          // Handle error response from the API
+        }
+      } catch (error) {
+        console.log(error);
+        // Handle error from the API request
       }
-
-      // Successful signup and data addition
-      router.push(`doctor/${result.user.uid}`);
     } else {
       // Handle the case when result is null or user property is missing
       console.log("Error: Unable to add user information");
     }
-
-    // console.log({ firstName, lastName, email, password, aadhaarCard });
-    // Validate form inputs
-    // if (
-    // /  !validateName(firstName) ||
-    // /  !validateName(lastName) ||
-    // /  !validateAadhaarCard(aadhaarCard) ||
-    // /  !phoneNumber.match(/^\d+$/) ||
-    // /  !email.includes("@") ||
-    //   password.length < 6
-    // ) {
-    //   toast({
-    //     title: "Error",
-    //     description: "Please fill in all required fields correctly",
-    //     status: "error",
-    //     duration: 3000,
-    //     isClosable: true,
-    //   });
-    //   return;
-    // }
-    // Handle signup logic here
   };
+
+  // console.log({ firstName, lastName, email, password, aadhaarCard });
+  // Validate form inputs
+  // if (
+  // /  !validateName(firstName) ||
+  // /  !validateName(lastName) ||
+  // /  !validateAadhaarCard(aadhaarCard) ||
+  // /  !phoneNumber.match(/^\d+$/) ||
+  // /  !email.includes("@") ||
+  //   password.length < 6
+  // ) {
+  //   toast({
+  //     title: "Error",
+  //     description: "Please fill in all required fields correctly",
+  //     status: "error",
+  //     duration: 3000,
+  //     isClosable: true,
+  //   });
+  //   return;
+  // }
+  // Handle signup logic here
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -183,8 +195,7 @@ const Signup = () => {
             <FormLabel className={styles.formLabel}>Password</FormLabel>
             <div className={styles.passwordInputContainer}>
               <Input
-                // type={showPassword ? "text" : "password"}
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 value={password}
