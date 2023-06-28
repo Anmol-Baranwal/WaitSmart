@@ -2,11 +2,21 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import getData from "@/lib/firebase/firestore/getData";
 import styles from "@/styles/doctor.module.css"; // Import the doctor.module.css file
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  doc,
+  query,
+  where,
+} from "firebase/firestore";
+import { firebase_app } from "@/firebaseConfig";
 
 const Doctor = () => {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
   const [patients, setPatients] = useState([]);
+  const [doctorsData, setDoctorsData] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -21,19 +31,35 @@ const Doctor = () => {
     const fetchPatientsData = async () => {
       try {
         const db = getFirestore(firebase_app);
-        const patientsRef = collection(
-          db,
-          "doctors",
-          router.query.doctorId,
-          "patients"
+        const doctorId = router.query.doctorId;
+
+        // Get the doctor document based on the name field containing the patient subcollection ID
+        const doctorsCollectionRef = collection(db, "doctors");
+        const querySnapshot = await getDocs(
+          query(doctorsCollectionRef, where("name", "==", doctorId))
         );
+
+        if (querySnapshot.docs.length === 0) {
+          console.log("Doctor not found");
+          return;
+        }
+
+        const doctorDocRef = querySnapshot.docs[0].ref;
+
+        // Get the "patients" subcollection of the doctor
+        const patientsRef = collection(doctorDocRef, "patients");
+
+        // Get all the patient documents
         const patientsSnapshot = await getDocs(patientsRef);
+
+        // Map the patient documents to obtain the patient data
         const patientsData = patientsSnapshot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
 
         setPatients(patientsData);
+        console.log({ patientsData });
         console.log("Patient records fetched successfully");
       } catch (error) {
         console.log(error);
