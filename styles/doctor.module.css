@@ -29,3 +29,56 @@
 }
 
 /* Add more styles as needed */
+.container {
+  margin-top: 20px;
+}
+
+.doctorRecords {
+  width: 100%;
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.info {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 5px;
+}
+
+.patientRecords {
+  display: block;
+  margin-top: 40px;
+}
+
+.patientTable {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.patientTable th,
+.patientTable td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.patientTable th {
+  background-color: #f5f5f5;
+}
+
+.patientTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.patientTable tbody tr:hover {
+  background-color: #f0f0f0;
+}

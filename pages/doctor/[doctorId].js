@@ -77,39 +77,55 @@ const Doctor = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.doctorRecords}>
-        <h1 className={styles.heading}>
-          {/* Doctor Dynamic Page {router.query.doctorId} */}
-        </h1>
-        <div className={styles.info}>
-          <span className={styles.label}>First Name:</span>
-          <span className={styles.value}>{userData.firstName}</span>
-        </div>
-        <div className={styles.info}>
-          <span className={styles.label}>Last Name:</span>
-          <span className={styles.value}>{userData.lastName}</span>
-        </div>
-        <div className={styles.info}>
-          <span className={styles.label}>Email:</span>
-          <span className={styles.value}>{userData.email}</span>
-        </div>
-        <div className={styles.info}>
-          <span className={styles.label}>Phone Number:</span>
-          <span className={styles.value}>{userData.phoneNumber}</span>
-        </div>
-        <div className={styles.info}>
-          <span className={styles.label}>Aadhaar Card:</span>
-          <span className={styles.value}>{userData.aadhaarCard}</span>
+      <div>
+        <div className={styles.doctorRecords}>
+          <h1 className={styles.heading}>
+            {/* Doctor Dynamic Page {router.query.doctorId} */}
+          </h1>
+          <div className={styles.info}>
+            <span className={styles.label}>First Name:</span>
+            <span className={styles.value}>{userData.firstName}</span>
+          </div>
+          <div className={styles.info}>
+            <span className={styles.label}>Last Name:</span>
+            <span className={styles.value}>{userData.lastName}</span>
+          </div>
+          <div className={styles.info}>
+            <span className={styles.label}>Email:</span>
+            <span className={styles.value}>{userData.email}</span>
+          </div>
+          <div className={styles.info}>
+            <span className={styles.label}>Phone Number:</span>
+            <span className={styles.value}>{userData.phoneNumber}</span>
+          </div>
+          <div className={styles.info}>
+            <span className={styles.label}>Aadhaar Card:</span>
+            <span className={styles.value}>{userData.aadhaarCard}</span>
+          </div>
         </div>
       </div>
       <div className={styles.patientRecords}>
         <h2 className={styles.patientHeading}>Patient Records</h2>
-        {patients.map((patient) => (
-          <div key={patient.id} className={styles.patientInfo}>
-            <span className={styles.patientLabel}>First Name:</span>
-            <span className={styles.patientValue}>{patient.firstName}</span>
-          </div>
-        ))}
+        <table className={styles.patientTable}>
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Contact Number</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            {patients.map((patient) => (
+              <tr key={patient.id}>
+                <td>{patient.firstName}</td>
+                <td>{patient.lastName}</td>
+                <td>{patient.contactNumber}</td>
+                <td>{patient.city}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
