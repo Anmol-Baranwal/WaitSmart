@@ -19,19 +19,22 @@ const Doctor = () => {
     };
 
     const fetchPatientsData = async () => {
-      // console.log(router.query.doctorId);
       try {
-        const response = await fetch(
-          `/api/patients?doctorId=${router.query.doctorId}`
+        const db = getFirestore(firebase_app);
+        const patientsRef = collection(
+          db,
+          "doctors",
+          router.query.doctorId,
+          "patients"
         );
-        if (response.ok) {
-          const { patients } = await response.json();
-          console.log({ patients });
-          setPatients(patients);
-          console.log("Patient records fetched successfully");
-        } else {
-          console.log("Failed to fetch patient records");
-        }
+        const patientsSnapshot = await getDocs(patientsRef);
+        const patientsData = patientsSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        setPatients(patientsData);
+        console.log("Patient records fetched successfully");
       } catch (error) {
         console.log(error);
         console.log("An error occurred while fetching patient records");
