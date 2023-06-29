@@ -4,6 +4,14 @@
   padding: 20px;
   background-color: var(--bg-light);
   color: var(--text-black);
+  font-family: "DM Sans", sans-serif;
+  /* max-height: 100vh;
+  max-width: 100vw;
+  background: radial-gradient(
+    circle,
+    rgba(25, 16, 37, 1) 0%,
+    rgba(8, 12, 20, 1) 100%
+  ); */
 }
 
 .heading {
@@ -21,14 +29,14 @@
 }
 
 .value {
-  margin-left: 10px;
+  margin-left: 30px;
+  font-family: "Poppins", sans-serif;
 }
 
 .loading {
   text-align: center;
 }
 
-/* Add more styles as needed */
 .container {
   margin-top: 20px;
 }
@@ -69,10 +77,17 @@
 .patientTable td {
   padding: 8px;
   border-bottom: 1px solid #ccc;
+  text-align: left;
+  text-transform: capitalize;
 }
 
 .patientTable th {
   background-color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+}
+
+.patientTable th:last-child {
+  text-align: center;
 }
 
 .patientTable tbody tr:nth-child(even) {
@@ -81,19 +96,19 @@
 
 .patientTable tbody tr:hover {
   background-color: #f0f0f0;
+  border-bottom: none;
 }
 
 .btn {
   margin-top: 0rem;
   border-radius: 0.3rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0.8rem;
   font-family: Poppins, sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.05rem;
   border: none;
   outline: 0;
   width: 100%;
   transition: 0.3s ease-in-out;
+  margin-left: 5px;
 }
 
 .primary {
@@ -103,4 +118,9 @@
 
 .primary:hover {
   background-color: var(--text-primary);
+}
+
+.customHover:hover {
+  background-color: var(--primary-300);
+  color: var(--color-white);
 }

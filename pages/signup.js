@@ -212,6 +212,9 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className={styles.input}
                 placeholder="Enter your password"
+                title="Password must be at least 6 characters long and include one uppercase letter and one number"
+                pattern="^(?=.*[A-Z])(?=.*[0-9]).{6,}$"
+                minLength={6}
                 required
               />
               <div

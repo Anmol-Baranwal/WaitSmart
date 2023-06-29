@@ -82,12 +82,10 @@ const Doctor = () => {
             {/* Doctor Dynamic Page {router.query.doctorId} */}
           </h1>
           <div className={styles.info}>
-            <span className={styles.label}>First Name:</span>
-            <span className={styles.value}>{userData.firstName}</span>
-          </div>
-          <div className={styles.info}>
-            <span className={styles.label}>Last Name:</span>
-            <span className={styles.value}>{userData.lastName}</span>
+            <span className={styles.label}>Full Name:</span>
+            <span
+              className={styles.value}
+            >{`${userData.firstName} ${userData.lastName}`}</span>
           </div>
           <div className={styles.info}>
             <span className={styles.label}>Email:</span>
@@ -99,7 +97,10 @@ const Doctor = () => {
           </div>
           <div className={styles.info}>
             <span className={styles.label}>Aadhaar Card:</span>
-            <span className={styles.value}>{userData.aadhaarCard}</span>
+            <span className={styles.value}>
+              {" "}
+              {`${userData.aadhaarCard.substr(0, 8)}${"*".repeat(4)}`}
+            </span>
           </div>
         </div>
       </div>
@@ -108,17 +109,16 @@ const Doctor = () => {
         <table className={styles.patientTable}>
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
+              <th>Full Name</th>
               <th>Contact Number</th>
               <th>City</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             {patients.map((patient) => (
               <tr key={patient.id}>
-                <td>{patient.firstName}</td>
-                <td>{patient.lastName}</td>
+                <td>{`${patient.firstName} ${patient.lastName}`}</td>
                 <td>{patient.contactNumber}</td>
                 <td>{patient.city}</td>
                 <td>
