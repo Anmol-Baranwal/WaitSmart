@@ -16,7 +16,6 @@ const Doctor = () => {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
   const [patients, setPatients] = useState([]);
-  const [doctorsData, setDoctorsData] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -30,37 +29,19 @@ const Doctor = () => {
 
     const fetchPatientsData = async () => {
       try {
-        const db = getFirestore(firebase_app);
-        const doctorId = router.query.doctorId;
-
-        // Get the doctor document based on the name field containing the patient subcollection ID
-        const doctorsCollectionRef = collection(db, "doctors");
-        const querySnapshot = await getDocs(
-          query(doctorsCollectionRef, where("name", "==", doctorId))
+        const response = await fetch(
+          `/api/patients?doctorId=${router.query.doctorId}`
         );
+        const data = await response.json();
 
-        if (querySnapshot.docs.length === 0) {
-          console.log("Doctor not found");
-          return;
+        if (response.ok) {
+          setPatients(data.patients);
+          console.log(data.patients);
+          console.log("Patient records fetched successfully");
+        } else {
+          console.log(data.error);
+          console.log("An error occurred while fetching patient records");
         }
-
-        const doctorDocRef = querySnapshot.docs[0].ref;
-
-        // Get the "patients" subcollection of the doctor
-        const patientsRef = collection(doctorDocRef, "patients");
-
-        // Get all the patient documents
-        const patientsSnapshot = await getDocs(patientsRef);
-
-        // Map the patient documents to obtain the patient data
-        const patientsData = patientsSnapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-
-        setPatients(patientsData);
-        console.log({ patientsData });
-        console.log("Patient records fetched successfully");
       } catch (error) {
         console.log(error);
         console.log("An error occurred while fetching patient records");
