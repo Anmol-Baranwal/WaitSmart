@@ -82,3 +82,25 @@
 .patientTable tbody tr:hover {
   background-color: #f0f0f0;
 }
+
+.btn {
+  margin-top: 0rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem 1rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05rem;
+  border: none;
+  outline: 0;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.primary {
+  background-color: var(--primary-300);
+  color: var(--color-white);
+}
+
+.primary:hover {
+  background-color: var(--text-primary);
+}
