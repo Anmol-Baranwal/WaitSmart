@@ -1,21 +1,34 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import getData from "@/lib/firebase/firestore/getData";
-import styles from "@/styles/doctor.module.css"; // Import the doctor.module.css file
-import {
-  getFirestore,
-  collection,
-  getDocs,
-  doc,
-  query,
-  where,
-} from "firebase/firestore";
-import { firebase_app } from "@/firebaseConfig";
+import styles from "@/styles/doctor.module.css";
+import CustomButton from "@/components/Button/CustomButton";
 
 const Doctor = () => {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
   const [patients, setPatients] = useState([]);
+
+  const fetchPatientsData = useCallback(async () => {
+    try {
+      const response = await fetch(
+        `/api/patients?doctorId=${router.query.doctorId}`
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        setPatients(data.patients);
+        console.log(data.patients);
+        console.log("Patient records fetched successfully");
+      } else {
+        console.log(data.error);
+        console.log("An error occurred while fetching patient records");
+      }
+    } catch (error) {
+      console.log(error);
+      console.log("An error occurred while fetching patient records");
+    }
+  }, [router.query.doctorId]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -27,30 +40,35 @@ const Doctor = () => {
       }
     };
 
-    const fetchPatientsData = async () => {
-      try {
-        const response = await fetch(
-          `/api/patients?doctorId=${router.query.doctorId}`
-        );
-        const data = await response.json();
-
-        if (response.ok) {
-          setPatients(data.patients);
-          console.log(data.patients);
-          console.log("Patient records fetched successfully");
-        } else {
-          console.log(data.error);
-          console.log("An error occurred while fetching patient records");
-        }
-      } catch (error) {
-        console.log(error);
-        console.log("An error occurred while fetching patient records");
-      }
-    };
-
     fetchUserData();
     fetchPatientsData();
-  }, [router.query.doctorId]);
+  }, [fetchPatientsData, router.query.doctorId]);
+
+  const handleDeletePatient = async (patientId) => {
+    try {
+      const response = await fetch(
+        `/api/deletePatient/${patientId}?doctorId=${router.query.doctorId}`,
+        {
+          method: "DELETE",
+        }
+      );
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log(data.message);
+        fetchPatientsData();
+        // setPatients((prevPatients) =>
+        //   prevPatients.filter((patient) => patient.id !== patientId)
+        // );
+      } else {
+        console.log(data.error);
+        console.log("Failed to delete patient record");
+      }
+    } catch (error) {
+      console.log(error);
+      console.log("An error occurred while deleting patient record");
+    }
+  };
 
   if (!userData) {
     return <div className={styles.loading}>Loading...</div>;
@@ -103,6 +121,14 @@ const Doctor = () => {
                 <td>{patient.lastName}</td>
                 <td>{patient.contactNumber}</td>
                 <td>{patient.city}</td>
+                <td>
+                  <button
+                    className={`${styles.btn} ${styles.primary}`}
+                    onClick={() => handleDeletePatient(patient.id)}
+                  >
+                    Completed
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
