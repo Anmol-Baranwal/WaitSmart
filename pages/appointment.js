@@ -52,7 +52,7 @@ const Appointment = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    if (e) e.preventDefault();
+    // if (e) e.preventDefault();
 
     try {
       const response = await fetch("/api/createDoctorAppointment", {
@@ -110,6 +110,9 @@ const Appointment = () => {
               onChange={(e) => setFirstName(e.target.value)}
               className={styles.input}
               placeholder="Enter your first name"
+              pattern="[A-Za-z]+"
+              title="Please enter alphabets only"
+              required
             />
           </FormControl>
 
@@ -121,6 +124,9 @@ const Appointment = () => {
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
               placeholder="Enter your last name"
+              pattern="[A-Za-z]+"
+              title="Please enter alphabets only"
+              required
             />
           </FormControl>
 
@@ -132,17 +138,21 @@ const Appointment = () => {
               onChange={(e) => setContactNumber(e.target.value)}
               className={styles.input}
               placeholder="Enter your phone number (10 digits)"
+              pattern="[0-9]{10}"
+              title="Please enter digits only without country code"
+              maxLength={10}
+              required
             />
           </FormControl>
 
           <FormControl className={styles.formControl} id="doctor">
             <FormLabel className={styles.label}>Doctor</FormLabel>
             <Select
-              required
               value={selectedDoctor}
               onChange={(e) => setSelectedDoctor(e.target.value)}
               className={styles.select}
               placeholder="Choose your doctor"
+              required
             >
               {doctors.map((doctor) => (
                 <option key={doctor.id} value={doctor.id}>
@@ -160,16 +170,19 @@ const Appointment = () => {
               onChange={(e) => setCity(e.target.value)}
               className={styles.input}
               placeholder="Enter your city"
+              title="Please enter alphabets only"
+              required
             />
           </FormControl>
 
-          <CustomButton
+          <button
             type="submit"
-            className={styles.btn}
-            onClick={handleSubmit}
+            // className={styles.btn}
+            className={`${styles.btn} ${styles.primary}`}
+            // onClick={handleSubmit}
           >
             Submit
-          </CustomButton>
+          </button>
         </form>
       </Box>
     </section>
