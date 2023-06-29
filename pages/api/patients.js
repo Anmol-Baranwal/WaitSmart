@@ -1,15 +1,32 @@
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 import { firebase_app } from "@/firebaseConfig";
 
 export default async function handler(req, res) {
   const { doctorId } = req.query;
 
-  //   console.log(req.query.doctorId);
   try {
     const db = getFirestore(firebase_app);
-    const patientsRef = collection(db, "doctors", doctorId, "patients");
+    const doctorsCollectionRef = collection(db, "doctors");
+
+    const querySnapshot = await getDocs(
+      query(doctorsCollectionRef, where("name", "==", doctorId))
+    );
+
+    if (querySnapshot.docs.length === 0) {
+      console.log("Doctor not found");
+      return res.status(404).json({ error: "Doctor not found" });
+    }
+
+    const doctorDocRef = querySnapshot.docs[0].ref;
+    const patientsRef = collection(doctorDocRef, "patients");
     const patientsSnapshot = await getDocs(patientsRef);
-    // console.log({ patientsRef });
+
     const patientsData = patientsSnapshot.docs.map((doc) => ({
       id: doc.id,
       ...doc.data(),
