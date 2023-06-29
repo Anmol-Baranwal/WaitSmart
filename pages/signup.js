@@ -132,6 +132,8 @@ const Signup = () => {
               onChange={(e) => setFirstName(e.target.value)}
               className={styles.input}
               placeholder="Enter your first name"
+              pattern="[A-Za-z]+"
+              title="Please enter alphabets only"
               required
               //   isInvalid={!validateName(firstName)}
             />
@@ -146,6 +148,8 @@ const Signup = () => {
               onChange={(e) => setLastName(e.target.value)}
               className={styles.input}
               placeholder="Enter your last name"
+              pattern="[A-Za-z]+"
+              title="Please enter alphabets only"
               required
             />
           </FormControl>
@@ -160,6 +164,7 @@ const Signup = () => {
               className={styles.input}
               placeholder="Enter your Aadhaar card number"
               maxLength={12}
+              title="Please enter 12 digits"
               required
             />
           </FormControl>
@@ -173,6 +178,9 @@ const Signup = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
               className={styles.input}
               placeholder="Enter your phone number"
+              pattern="[0-9]{10}"
+              title="Please enter 10 digits phone number without country code"
+              maxLength={10}
               required
             />
           </FormControl>
@@ -187,6 +195,8 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
               placeholder="Enter your email address"
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              title="Please enter correct email"
               required
             />
           </FormControl>
