@@ -1,9 +1,9 @@
 
 # <img src="https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/cfd5e684-36b7-46e6-a028-a280263c5128" alt="icon of todo list" width="35" /> WaitSmart
 
-> :information_source: This is a web application built using [Next.js](https://nextjs.org/).
+> :information_source: This web application is constructed with Next.js, a framework you can find at [Next.js](https://nextjs.org/) which is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This project aims to facilitate efficient queue management in various settings, such as hospitals or other establishments. Users can wait comfortably from their location and receive notifications when it's their turn. Doctors will have the ability to send messages and updates to patients.
+This project aims to facilitate efficient queue management in various settings, such as hospitals or other establishments. Users can wait comfortably from their location and receive notifications when it's their turn. Doctors will have the ability to manage patients.
 
 <hr>
 
@@ -15,6 +15,29 @@ This project is hosted on [Vercel Platform](https://vercel.com/). Visit the foll
 https://wait-smart-chi.vercel.app/
 ```
 <hr>
+
+## 🌐 Setup Local Environment
+
+You need to setup a few API keys for this project to be setup correctly otherwise you won't be able to properly work on this project
+
+- [Firebase Services Key](https://firebase.google.com/)
+- [Twilio API Key](https://www.twilio.com/docs/sms/api/message-resource#create-a-message-resource)
+
+For that, you need to create a `.env.local` file in your project, as shown in the [docs](https://nextjs.org/docs/basic-features/environment-variables#loading-environment-variables). The file should look like this:
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=<WRITE VALUE HERE>
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=<WRITE VALUE HERE>
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=<WRITE VALUE HERE>
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=<WRITE VALUE HERE>
+NEXT_PUBLIC_FIREBASE_APP_ID=<WRITE VALUE HERE>
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=<WRITE VALUE HERE>
+NEXT_PUBLIC_TWILIO_ACCOUNT_SID=<WRITE VALUE HERE>
+NEXT_PUBLIC_TWILIO_AUTH_TOKEN=<WRITE VALUE HERE>
+NEXT_PUBLIC_TWILIO_PHONE_NUMBER=<WRITE VALUE HERE>
+```
+
+You can retrieve the above environment values by referring to their documentation linked above. Once retrieved, paste them accordingly as mentioned above.
 
 ## ✅ Guidelines to run web app locally
 
@@ -58,6 +81,69 @@ npm run dev
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 
 <hr>
+
+## 📂 Codebase Structure
+
+A quick look at the structure of the codebase.
+
+```
+.
+|──node_modules
+|──firebase.json
+|──firebaseConfig.json
+|──firestore.rules
+|──next.config.json
+|──jsconfig.json
+|──.eslintrc.json
+|──package-lock.json
+|──package.json
+|──README.md
+└── components
+    |───componentName
+        |───componentName.js
+        └───componentName.module.css
+└── data
+    └───files.json
+└── lib
+    └───firebase
+        └───auth
+            └───signin.js
+            └───singup.js
+        └───context
+            └───AuthContext.js
+        └───firestore
+            └───addData.js
+            └───getData.js
+└── pages
+    └───api
+        └───deletePatient
+            └───[patientId].js
+        └───createDoctorAppointment.js
+        └───createUser.js
+        └───patients.js
+    └───doctor
+        └───[doctorId].js
+    └───_app.js
+    └───_document.js
+    └───appointment.js
+    └───homepage.js
+    └───index.js
+    └───login.js
+    └───protected.js
+    └───signup.js
+└── public
+    └───static
+        └───Folder
+            └───icons.png
+        └───Folder
+            └───icons.png
+└── styles
+    └──appointment.module.css
+    └──globals.css
+    └──auth.module.css
+    └──doctor.module.css
+    └──Home.module.css
+```
 
 ## 🗄️ Database Structure
 
