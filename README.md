@@ -1,4 +1,3 @@
-
 # <img src="https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/cfd5e684-36b7-46e6-a028-a280263c5128" alt="icon of todo list" width="35" /> WaitSmart
 
 > :information_source: This web application is constructed with Next.js, a framework you can find at [Next.js](https://nextjs.org/) which is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
@@ -158,6 +157,28 @@ A quick look at the structure of the codebase.
                 |── contactNumber
                 └── city
 ```
+
+<hr>
+
+## 💻 Glimpse of the Web Application
+
+> Landing Page
+![WaitSmart](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/08e8a406-ba15-4090-8e67-b0bc486119bf)
+
+> Exciting Features
+![Exciting Features](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/b9e39da9-9421-4da9-aafd-da0895124c80)
+
+> Tech Stack
+![Tech Stack](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/b65496ab-39c1-4edd-b69d-cbb491e688d9)
+
+> FAQs
+![FAQs](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/9e496d50-d69e-4a98-a9a9-160dc7980edf)
+
+> Dashboard
+![Dashboard](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/4f8f2416-7625-4b87-84e8-7f6397746c26)
+
+> Project Management
+![Project Management](https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/50ef3018-8c38-4f0a-ab1b-6714d98245b8)
 
 <hr>
  
