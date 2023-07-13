@@ -1,4 +1,4 @@
-# <img src="https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/cfd5e684-36b7-46e6-a028-a280263c5128" alt="icon of todo list" width="35" /> WaitSmart
+# <img src="https://github.com/Anmol-Baranwal/WaitSmart/assets/74038190/ac2d20c1-6547-44d3-8f8b-b97d454850ae" alt="icon of todo list" width="35" /> WaitSmart
 
 > :information_source: This web application is constructed with Next.js, a framework you can find at [Next.js](https://nextjs.org/) which is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
