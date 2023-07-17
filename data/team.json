@@ -4,7 +4,7 @@
     "imgSrc": "Member1",
     "altText": "Jai Garg",
     "title": "Jai Garg",
-    "designation": "Frontend Developer",
+    "designation": "",
     "socialProfile": [
       {
         "id": 1,
@@ -82,7 +82,7 @@
     "imgSrc": "Member3",
     "altText": "Aman Garg",
     "title": "Aman Garg",
-    "designation": "Frontend Developer",
+    "designation": "",
     "socialProfile": [
       {
         "id": 1,
